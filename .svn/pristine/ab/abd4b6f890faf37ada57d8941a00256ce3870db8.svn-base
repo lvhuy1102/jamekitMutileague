@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/app_background"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcvTimeline"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="@dimen/span16"
+        android:layout_marginLeft="@dimen/span16"
+        android:layout_marginRight="@dimen/span16"
+        android:layout_marginTop="@dimen/span16">
+
+
+    </android.support.v7.widget.RecyclerView>
+
+    <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+        android:id="@+id/txtNotDataTimeline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/no_timeline_avaiable"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/font_size_body"
+        android:visibility="invisible" />
+</RelativeLayout>

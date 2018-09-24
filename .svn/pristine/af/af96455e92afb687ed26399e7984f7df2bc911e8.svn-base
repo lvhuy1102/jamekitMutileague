@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "251236486634",
+    "firebase_url": "https://multileagues-7c7c1.firebaseio.com",
+    "project_id": "multileagues-7c7c1",
+    "storage_bucket": "multileagues-7c7c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251236486634:android:256a260bd760eaa8",
+        "android_client_info": {
+          "package_name": "com.hcpt.multileagues"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251236486634-n62qvdhlnpadtr6mdkdirjic0r2scmgt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hcpt.multileagues",
+            "certificate_hash": "11db7086e7a7e9b40ca59e0d5a37453b598fa34d"
+          }
+        },
+        {
+          "client_id": "251236486634-7aeiqahtou55dbqjrl4tkr6h59f25t4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoSlI6jm1zUozKFetjyaHMMDLL4qgOYZ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251236486634-n1rgtdo08i6ot3nhhoaqqusu4re4722e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hicomsolution.allleagues"
+              }
+            },
+            {
+              "client_id": "251236486634-7aeiqahtou55dbqjrl4tkr6h59f25t4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

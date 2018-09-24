@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Ir a la pantalla de inicio"</string>
+    <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s, %2$s"</string>
+    <string msgid="6623331958280229229" name="abc_action_bar_home_subtitle_description_format">"%1$s, %2$s, %3$s"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Desplazarse hacia arriba"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Más opciones"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Listo"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Ver todo"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Seleccionar una aplicación"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"DESACTIVADO"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"ACTIVADO"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Buscar…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Borrar consulta"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Consulta"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Buscar"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Enviar consulta"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Búsqueda por voz"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Compartir con"</string>
+    <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Compartir con %s"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Contraer"</string>
+    <string name="action_alarm">Alarma</string>
+    <string name="action_filter">Filtrar</string>
+    <string name="action_refresh">Recargar</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="app_version">Versión:</string>
+    <string name="app_version_name">1.0</string>
+    <string name="away">Legos</string>
+    <string name="chinese">Chinese</string>
+    <string name="close_matches">Cerrar Partidos</string>
+    <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"Habilitar"</string>
+    <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> no funcionará hasta que no habilites Servicios de Google Play."</string>
+    <string msgid="3147157405986503375" name="common_google_play_services_enable_title">"Habilita Servicios de Google Play"</string>
+    <string msgid="9115728400623041681" name="common_google_play_services_install_button">"Instalar"</string>
+    <string msgid="8179894293032530091" name="common_google_play_services_install_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> no se ejecutará si los Servicios de Google Play no están instalados en tu dispositivo."</string>
+    <string msgid="7442193194585196676" name="common_google_play_services_install_title">"Descargar Servicios de Google Play"</string>
+    <string msgid="4293541511340436975" name="common_google_play_services_notification_channel_name">"Disponibilidad Servicios de Google Play"</string>
+    <string msgid="180394615667698242" name="common_google_play_services_notification_ticker">"Error de Servicios de Google Play"</string>
+    <string msgid="2518680582564677258" name="common_google_play_services_unknown_issue">"La aplicación <ns1:g id="APP_NAME">%1$s</ns1:g> tiene problemas con los Servicios de Google Play. Vuelve a intentarlo."</string>
+    <string msgid="5501187292256987189" name="common_google_play_services_unsupported_text">"No es posible ejecutar la aplicación <ns1:g id="APP_NAME">%1$s</ns1:g> sin los Servicios de Google Play, que no son compatibles con tu dispositivo."</string>
+    <string msgid="8172070149091615356" name="common_google_play_services_update_button">"Actualizar"</string>
+    <string msgid="7773943415006962566" name="common_google_play_services_update_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> no funcionará hasta que no actualices Servicios de Google Play."</string>
+    <string msgid="8706675115216073244" name="common_google_play_services_update_title">"Actualiza Servicios de Google Play"</string>
+    <string msgid="7894275749778928941" name="common_google_play_services_updating_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> no se ejecutará hasta que finalice la actualización en curso de Servicios de Google Play."</string>
+    <string msgid="2804989272736383918" name="common_google_play_services_wear_update_text">"Se necesita una nueva versión de Servicios de Google Play. Se actualizará en breve."</string>
+    <string msgid="5201977337835724196" name="common_open_on_phone">"Abrir en teléfono"</string>
+    <string msgid="3441753203274453993" name="common_signin_button_text">"Iniciar sesión"</string>
+    <string msgid="669893613918351210" name="common_signin_button_text_long">"Iniciar sesión con Google"</string>
+    <string name="copy_right">Copyright © 2016 - Leagues es alimentado por</string>
+    <string name="deselect_all">Deseleccionar todo</string>
+    <string name="detail">Detalle</string>
+    <string name="drawer_close">Close Drawer</string>
+    <string name="drawer_open">Open Drawer</string>
+    <string name="english">English</string>
+    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Varias"</string>
+    <string name="final_text">Final</string>
+    <string name="french">Français</string>
+    <string name="german">Deutsch</string>
+    <string name="home">Casa</string>
+    <string name="homepage">Página principal:</string>
+    <string name="image_desc">Imagen</string>
+    <string name="italian">Italiano</string>
+    <string name="live">Vivo</string>
+    <string name="msg_using_offline_data">La red no está disponible. Los datos no está en línea</string>
+    <string name="no_data">Datos no encontrados</string>
+    <string name="no_network">Sin red</string>
+    <string name="odds">Cuotas</string>
+    <string msgid="368094699078615544" name="s1">"Guardar imagen"</string>
+    <string msgid="4550830452390689489" name="s2">"¿Permitir que el anuncio almacene imágenes en la galería de imágenes?"</string>
+    <string msgid="2435407834265420668" name="s3">"Aceptar"</string>
+    <string msgid="9167523597401839819" name="s4">"Rechazar"</string>
+    <string msgid="1566682516266724847" name="s5">"Crear evento de calendario"</string>
+    <string msgid="5996672174517137271" name="s6">"¿Permitir que el anuncio cree un evento de calendario?"</string>
+    <string msgid="7163549807207034258" name="s7">"Anuncio de prueba"</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Buscar"</string>
+    <string name="select_fav_teams">Seleccione sus equipos</string>
+    <string name="spanish">Español</string>
+    <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"+999"</string>
+    <string name="text_after">después</string>
+    <string name="text_all">Todas</string>
+    <string name="text_auto_refresh">Actualización automática</string>
+    <string name="text_auto_refresh_after_minute">Actualización automática después de %1$s minutos</string>
+    <string name="text_btn_about">Sobre nosotros</string>
+    <string name="text_btn_cancel">Cancelar</string>
+    <string name="text_btn_language">Idiomas</string>
+    <string name="text_btn_more_apps">Más aplicaciones</string>
+    <string name="text_btn_ok">OK</string>
+    <string name="text_btn_view">Ver</string>
+    <string name="text_club">CLUB</string>
+    <string name="text_club_information">Información del Club</string>
+    <string name="text_confirm_exit">¿Quieres salir?</string>
+    <string name="text_d">E</string>
+    <string name="text_draw">Empate</string>
+    <string name="text_established">Establecido: %1$s</string>
+    <string name="text_exit_app">Salir de la aplicación</string>
+    <string name="text_gd">GD</string>
+    <string name="text_getNotification">Obtener la notificación</string>
+    <string name="text_goal">G</string>
+    <string name="text_goal_difference">Diferencia de goles</string>
+    <string name="text_in">En</string>
+    <string name="text_l">P</string>
+    <string name="text_lineups">Alineaciones</string>
+    <string name="text_lose">Pérdida</string>
+    <string name="text_manager">Gerente: %1$s</string>
+    <string name="text_minutes">minutos</string>
+    <string name="text_news">Noticias</string>
+    <string name="text_nickname">Nombre corto: %1$s</string>
+    <string name="text_no_events">No actualizado</string>
+    <string name="text_out">Fuera</string>
+    <string name="text_own_goal">GP</string>
+    <string name="text_p">J</string>
+    <string name="text_penalty">Pen</string>
+    <string name="text_played">Jugó</string>
+    <string name="text_point">Punto</string>
+    <string name="text_pts">P</string>
+    <string name="text_rank">Rango</string>
+    <string name="text_red_card">TR</string>
+    <string name="text_remider_15">Alarm 15 minutos antes del partido</string>
+    <string name="text_remider_30">Alarm 30 minutos antes del partido</string>
+    <string name="text_remider_60">Alarm 60 minutos antes del partido</string>
+    <string name="text_remider_on_time">Alarma en el tiempo</string>
+    <string name="text_reminder_15">15 minutos antes</string>
+    <string name="text_reminder_30">30 minutos antes</string>
+    <string name="text_reminder_60">60 minutos antes</string>
+    <string name="text_reminder_on_time">A tiempo</string>
+    <string name="text_round">Redondo</string>
+    <string name="text_schedule">Programar</string>
+    <string name="text_settings">Ajustes</string>
+    <string name="text_stadium">Estadio: %1$s</string>
+    <string name="text_team">Equipo</string>
+    <string name="text_timeline">Línea de tiempo</string>
+    <string name="text_title_player">JUGADOR</string>
+    <string name="text_title_rank">#</string>
+    <string name="text_title_score">RESULTADO</string>
+    <string name="text_top_scorers">Máximos goleadores</string>
+    <string name="text_turn_on_fav_teams">Encienda Alertas de goles con sus favoritos</string>
+    <string name="text_view_detail">Ver Detalle</string>
+    <string name="text_w">G</string>
+    <string name="text_win">Ganar</string>
+    <string name="text_yellow_card">TA</string>
+    <string name="three_days_ago">hace 3 días</string>
+    <string name="today">Hoy</string>
+    <string name="two_days_ago">hace 2 días</string>
+    <string name="view"><u>Ver</u></string>
+    <string name="yesterday">Ayer</string>
+</resources>

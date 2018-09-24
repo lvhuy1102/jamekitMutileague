@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tbl_top_scorer"
+    android:layout_width="match_parent"
+    android:paddingLeft="@dimen/padding_small"
+    android:paddingRight="@dimen/padding_small"
+    android:layout_height="wrap_content" >
+
+    <TableRow
+        android:padding="@dimen/padding_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/padding_small"
+        android:paddingTop="@dimen/padding_small">
+
+        <TextView
+            android:id="@+id/lbl_rank_player"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/text_size_small" />
+
+        <!--<ImageView-->
+        <!--android:id="@+id/img_logo"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="@dimen/margin_horizontal_xlarge"-->
+        <!--android:layout_weight="1"-->
+        <!--android:contentDescription="@string/image_desc"-->
+        <!--android:gravity="center" />-->
+
+        <TextView
+            android:id="@+id/lbl_player_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingLeft="@dimen/padding_horizontal_large"
+            android:singleLine="true"
+            android:text="Suaze.L"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:gravity="right"
+            android:id="@+id/lbl_scores"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="8"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/text_size_small" />
+    </TableRow>
+
+</TableLayout>

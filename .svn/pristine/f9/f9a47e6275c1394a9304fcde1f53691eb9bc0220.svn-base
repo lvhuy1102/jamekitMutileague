@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fr_schedule"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_tabs"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spin_teams"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_horizontal"
+            android:layout_weight="15"
+            android:spinnerMode="dialog" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Spinner
+            android:id="@+id/spin_duration"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/margin_horizontal"
+            android:layout_weight="15"
+            android:spinnerMode="dialog" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_matchs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:dividerHeight="0dp"
+        android:divider="@null" />
+
+    <TextView
+        android:id="@+id/lbl_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:text="@string/text_no_events"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone" />
+
+</RelativeLayout>

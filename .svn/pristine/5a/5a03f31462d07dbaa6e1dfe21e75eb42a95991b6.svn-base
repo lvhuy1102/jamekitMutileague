@@ -1,0 +1,207 @@
+package com.hcpt.multileagues.activities;
+
+import android.Manifest;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+
+import com.android.volley.VolleyError;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.hcpt.multileagues.R;
+import com.hcpt.multileagues.configs.FruitySharedPreferences;
+import com.hcpt.multileagues.configs.GlobalValue;
+import com.hcpt.multileagues.configs.WebservicesConfigs;
+import com.hcpt.multileagues.network.ParameterFactory;
+import com.hcpt.multileagues.volley.HttpError;
+import com.hcpt.multileagues.volley.HttpGet;
+import com.hcpt.multileagues.volley.HttpListener;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+public class SplashActivity extends AppCompatActivity {
+
+    private Handler mHandler;
+    private Context self;
+    List<String> listPermission = new ArrayList<>();
+    private static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_splash);
+        try {
+            getSupportActionBar().hide();
+        } catch (NullPointerException ex) {
+            ex.printStackTrace();
+        }
+//        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
+        self = this;
+
+        if (Build.VERSION.SDK_INT >=23){
+            if (checkAndRequestPermissions()){
+                startAppHandler();
+            }
+        }else {
+            startAppHandler();
+        }
+
+    }
+
+    private void startAppHandler(){
+        if (GlobalValue.prefs == null) {
+            GlobalValue.prefs = new FruitySharedPreferences(self);
+        }
+
+        // Push notification.
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(new OnSuccessListener<InstanceIdResult>() {
+            @Override
+            public void onSuccess(InstanceIdResult instanceIdResult) {
+                Log.e("toan", "onSuccess: " + instanceIdResult.getToken());
+                postRegistratrionId(SplashActivity.this, instanceIdResult.getToken());
+            }
+        });
+        this.mHandler = new Handler();
+        mHandler.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+
+                Intent intent = new Intent(SplashActivity.this,
+                        MainActivity.class);
+                SplashActivity.this.startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,
+                        R.anim.slide_out_left);
+                finish();
+            }
+        }, 1500);
+    }
+
+    private boolean checkAndRequestPermissions() {
+        String[] permissions = {
+                Manifest.permission.GET_ACCOUNTS,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_PHONE_STATE,
+        };
+
+        for ( String permission: permissions) {
+            if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED){
+                listPermission.add(permission);
+            }
+        }
+
+        if (!listPermission.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermission.toArray
+                    (new String[listPermission.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode){
+            case REQUEST_ID_MULTIPLE_PERMISSIONS:
+                Boolean allPermissionsGranted  = true;
+                if (grantResults.length > 0) {
+                    for (int i = 0; i < grantResults.length; i++) {
+                        if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                            allPermissionsGranted  = false;
+                            break;
+                        }
+                    }
+                    if (!allPermissionsGranted) {
+                        boolean somePermissionsForeverDenied = false;
+                        boolean checkAllPermissionAllowed = true;
+                        for(String permission: permissions){
+                            if(ActivityCompat.shouldShowRequestPermissionRationale(this, permission)){
+                                //denied
+                                checkAndRequestPermissions();
+                                checkAllPermissionAllowed = false;
+                                Log.e("denied", permission);
+                            }else{
+                                if(ActivityCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED){
+                                    //allowed
+                                    Log.e("allowed", permission);
+                                } else{
+                                    //set to never ask again
+                                    Log.e("set to never ask again", permission);
+                                    somePermissionsForeverDenied = true;
+                                    checkAllPermissionAllowed = false;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if(somePermissionsForeverDenied){
+                            final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                            alertDialogBuilder.setTitle("Permissions Required")
+                                    .setMessage("You have forcefully denied some of the required permissions " +
+                                            "for this action. Please open settings, go to permissions and allow them.")
+                                    .setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                                                    Uri.fromParts("package", getPackageName(), null));
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                            startActivity(intent);
+                                        }
+                                    })
+                                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            System.exit(1);
+                                        }
+                                    })
+                                    .setCancelable(false)
+                                    .create()
+                                    .show();
+                        }
+                        if (checkAllPermissionAllowed){
+                            startAppHandler();
+                        }
+                    } else {
+                        startAppHandler();
+                    }
+                }
+        }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        checkAndRequestPermissions();
+    }
+    public static void postRegistratrionId(Context context, String registrationId) {
+
+        String url = WebservicesConfigs.URL_GET_REGISTRATION_GMC_ID;
+
+        // Create params
+        Map<String, String> params = ParameterFactory.createGCMIdParams(context, registrationId);
+        new HttpGet(context, url, params, true, new HttpListener() {
+            @Override
+            public void onHttpResponse(Object response) {
+            }
+        }, new HttpError() {
+            @Override
+            public void onHttpError(VolleyError volleyError) {
+            }
+        });
+    }
+}

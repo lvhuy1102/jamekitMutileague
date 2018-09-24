@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomMainTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/text_size_tabs_main</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textAllCaps">true</item>
+
+    </style>
+</resources>

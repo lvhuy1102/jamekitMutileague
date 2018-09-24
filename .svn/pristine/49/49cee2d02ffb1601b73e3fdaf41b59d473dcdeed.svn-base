@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_score"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+        android:id="@+id/txtOrdinarilyTopScoreItem"
+        android:layout_width="@dimen/span32"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:text="1"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/font_size_16" />
+
+    <LinearLayout
+        android:layout_width="@dimen/span50"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgTeamTopScoreItem"
+            android:layout_width="@dimen/span25"
+            android:layout_height="@dimen/span25"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerInside" />
+
+        <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+            android:id="@+id/txtTeamCodeTopScoreItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/font_size_team_code" />
+    </LinearLayout>
+
+    <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+        android:id="@+id/txtPlayerTopScoreItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/span10"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:ellipsize="marquee"
+        android:textIsSelectable="true"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/font_size_16" />
+
+    <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+        android:id="@+id/txtScoreTopScoreItem"
+        android:layout_width="@dimen/span64"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/span16"
+        android:gravity="center_horizontal"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/font_size_16" />
+
+</LinearLayout>

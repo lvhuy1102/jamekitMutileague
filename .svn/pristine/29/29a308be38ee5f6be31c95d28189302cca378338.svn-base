@@ -1,0 +1,314 @@
+package com.hcpt.multileagues.fragments;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.hcpt.multileagues.R;
+import com.hcpt.multileagues.activities.MatchDetailActivity;
+import com.hcpt.multileagues.activities.MatchDetailNotPlayedActivity;
+import com.hcpt.multileagues.adapters.ScheduleMatchsAdapter;
+import com.hcpt.multileagues.adapters.SpinnerRoundAdapter;
+import com.hcpt.multileagues.configs.GlobalFunctions;
+import com.hcpt.multileagues.configs.GlobalValue;
+import com.hcpt.multileagues.configs.WebservicesConfigs;
+import com.hcpt.multileagues.database.DatabaseUtility;
+import com.hcpt.multileagues.json.utils.ParserUtils;
+import com.hcpt.multileagues.modelmanager.ModelManager;
+import com.hcpt.multileagues.modelmanager.ModelManagerListener;
+import com.hcpt.multileagues.network.NetworkUtility;
+import com.hcpt.multileagues.objects.APIObj;
+import com.hcpt.multileagues.objects.MatchObj;
+import com.hcpt.multileagues.objects.RoundObj;
+
+import java.util.ArrayList;
+
+public class ScheduleCLFragment extends Fragment {
+
+    private static final String TAG = ScheduleCLFragment.class.getSimpleName();
+
+    private View view;
+    private Spinner mSpinRound;
+    private SpinnerRoundAdapter mRoundAdapter;
+    private ArrayList<RoundObj> mArrRound;
+    private ScheduleMatchsAdapter mMatchAdapter;
+    private ListView mLvMatch;
+    private ArrayList<MatchObj> mArrMatch;
+
+    private static MatchObj mMatchObj;
+
+    public int currentRound = 0;
+
+    private String roundId = "";
+    private TextView lbl_no_data;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Allow display option menu in this fragment.
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+
+        view = inflater.inflate(R.layout.fragment_schedule_cl, container, false);
+
+        initUI();
+
+        return view;
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        // TODO Auto-generated method stub
+        super.onPrepareOptionsMenu(menu);
+
+        // Hide filter menu.
+        MenuItem item = menu.findItem(R.id.action_filter);
+        item.setVisible(false);
+        menu.findItem(R.id.action_save).setVisible(false);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        menu.clear();
+        inflater.inflate(R.menu.menu_main, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_refresh) {
+            initMatchesByRound();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    // Init widget controls.
+    private void initUI() {
+        mLvMatch = (ListView) view.findViewById(R.id.lv_matchs);
+        mSpinRound = (Spinner) view.findViewById(R.id.spin_duration);
+        lbl_no_data = (TextView) view.findViewById(R.id.lbl_no_data);
+
+        // Should call this method at the end of declaring UI
+        getCurrentRound();
+
+        initRound();
+        initControl();
+    }
+
+    private void initControl() {
+        mSpinRound.setOnItemSelectedListener(onSpinRoundItemSelected);
+        mLvMatch.setOnItemClickListener(onListItemClick);
+    }
+
+    // Set onclick for list view.
+    OnItemClickListener onListItemClick = new OnItemClickListener() {
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position,
+                                long id) {
+            // Get match which is selected.
+            mMatchObj = mArrMatch.get(position);
+
+            // MatchDetailActivity.matchId = mMatchObj.getmMatchId();
+            MatchDetailActivity.currentMatch = mMatchObj;
+            MatchDetailNotPlayedActivity.matchObj = mMatchObj;
+
+            // Check time to set screen.
+            if (GlobalFunctions.checkMatchTime(mMatchObj) >= 0) {
+                startActivity(new Intent(getActivity(),
+                        MatchDetailActivity.class));
+            } else {
+                startActivity(new Intent(getActivity(),
+                        MatchDetailNotPlayedActivity.class));
+            }
+        }
+    };
+
+    // Set on item selected for week spinner.
+    OnItemSelectedListener onSpinRoundItemSelected = new OnItemSelectedListener() {
+
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            // Get round id
+            roundId = mArrRound.get(position).getId();
+
+            // Get matches
+            initMatchesByRound();
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Do nothing.
+        }
+    };
+
+    // Init Rounds.
+    private void initRound() {
+        if (mArrRound == null) {
+            mArrRound = new ArrayList<>();
+        } else {
+            mArrRound.clear();
+        }
+
+        if (NetworkUtility.getInstance(getActivity()).isNetworkAvailable()) {
+            getRoundFromApi();
+        } else {
+            getRoundFromDB();
+        }
+    }
+
+    private void getCurrentRound() {
+        ModelManager.getMatchesByRound(getActivity(), "0", true, new ModelManagerListener() {
+            @Override
+            public void onError() {
+
+            }
+
+            @Override
+            public void onSuccess(Object object) {
+                String json = (String) object;
+                ArrayList<MatchObj> arr = ParserUtils.parseSchedule(json);
+                currentRound = Integer.parseInt(arr.get(0).getmRound());
+            }
+        });
+    }
+
+    private void getRoundFromApi() {
+        ModelManager.getRoundsByLeague(getActivity(), false, new ModelManagerListener() {
+            @Override
+            public void onError() {
+            }
+
+            @Override
+            public void onSuccess(Object object) {
+                try {
+                    String json = (String) object;
+                    mArrRound = ParserUtils.parseRounds(getActivity(), json);
+                    // Need to remove item 'All'
+                    mArrRound.remove(0);
+                    mRoundAdapter = new SpinnerRoundAdapter(getActivity(), mArrRound);
+                    mSpinRound.setAdapter(mRoundAdapter);
+
+                    // Choose current round for first time
+                    for (int i = 1; i < mArrRound.size(); i++) {
+                        if (mArrRound.get(i).isCurrent()) {
+                            mSpinRound.setSelection(i);
+                            break;
+                        }
+                    }
+                    if (mArrRound.size() == 0) {
+                        lbl_no_data.setVisibility(View.VISIBLE);
+                    } else {
+                        lbl_no_data.setVisibility(View.GONE);
+                    }
+                } catch (IndexOutOfBoundsException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void getRoundFromDB() {
+        APIObj apiInfos = DatabaseUtility.getResuftFromApi(getActivity(),
+                WebservicesConfigs.URL_GET_ROUND + GlobalValue.leagueId);
+        if (apiInfos != null) {
+            try {
+                String json = apiInfos.getmResult();
+                mArrRound = ParserUtils.parseRounds(getActivity(), json);
+                // Need to remove item 'All'
+                mArrRound.remove(0);
+                mRoundAdapter = new SpinnerRoundAdapter(getActivity(), mArrRound);
+                mSpinRound.setAdapter(mRoundAdapter);
+
+                // Choose current round for first time
+                for (int i = 1; i < mArrRound.size(); i++) {
+                    if (mArrRound.get(i).isCurrent()) {
+                        mSpinRound.setSelection(i);
+                        break;
+                    }
+                }
+                if (mArrRound.size() == 0) {
+                    lbl_no_data.setVisibility(View.VISIBLE);
+                } else {
+                    lbl_no_data.setVisibility(View.GONE);
+                }
+            } catch (IndexOutOfBoundsException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    // Get schedule by round.
+    private void initMatchesByRound() {
+        if (NetworkUtility.getInstance(getActivity()).isNetworkAvailable()) {
+            getMatchesByRoundFromAPI();
+        } else {
+            getMatchesByRoundFromDB();
+        }
+    }
+
+    private void getMatchesByRoundFromDB() {
+        APIObj apiInfos = DatabaseUtility.getResuftFromApi(getActivity(),
+                (WebservicesConfigs.URL_GET_MATCHES_BY_ROUND + GlobalValue.leagueId + roundId));
+        if (apiInfos != null) {
+            String json = apiInfos.getmResult();
+            setDataForListView(json);
+        }
+    }
+
+    private void getMatchesByRoundFromAPI() {
+        ModelManager.getMatchesByRound(getActivity(), roundId, true,
+                new ModelManagerListener() {
+
+                    @Override
+                    public void onSuccess(Object object) {
+                        String json = (String) object;
+                        setDataForListView(json);
+                    }
+
+                    @Override
+                    public void onError() {
+                    }
+                });
+    }
+
+    // Set adapter for listview matches.
+    private void setDataForListView(String json) {
+        if (mArrMatch == null) {
+            mArrMatch = ParserUtils.parseSchedule(json);
+            mMatchAdapter = new ScheduleMatchsAdapter(getActivity(), mArrMatch);
+            mLvMatch.setAdapter(mMatchAdapter);
+        } else {
+            ArrayList<MatchObj> arrTemp = ParserUtils.parseSchedule(json);
+            if (arrTemp != null) {
+                mArrMatch.clear();
+                mArrMatch.addAll(arrTemp);
+                mMatchAdapter.notifyDataSetChanged();
+
+                // Reset temp var
+                arrTemp.clear();
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_item_spinner"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_admob"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/lbl_item_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_admob"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical|left"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingLeft="@dimen/padding_horizontal"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_normal" />
+
+</LinearLayout>

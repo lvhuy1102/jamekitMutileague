@@ -1,0 +1,446 @@
+[
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_splash.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_splash.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_news.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_news.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\\output\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_layout_tab_text.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\\output\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_match_detail_not_played.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\activity_match_detail_not_played.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\demo_layout.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\demo_layout.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\17bee4d6dac55f681b3b56978cd3196a99b2fbee\\output\\res\\layout\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_top_score_new.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_top_score_new.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_chatbox.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_chatbox.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_fav_team.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_fav_team.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tooltip.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\tooltip.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_progress_dialog.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\layout_progress_dialog.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\\output\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_rank_clubs.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_rank_clubs.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_favourite_teams.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\dialog_favourite_teams.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_lineups.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_lineups.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_events.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_events.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\frm_timeline.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\frm_timeline.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\\output\\res\\layout\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_main.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_main.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_more_apps.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\activity_more_apps.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_dashboard.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_league_header.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_league_header.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_match.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_match.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_top_score.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_top_score.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\\output\\res\\layout\\notification_template_media_custom.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_rank.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_rank.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_timeline_not_played.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_timeline_not_played.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_timeline_item.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\custom_timeline_item.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\actionbar_layout.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\actionbar_layout.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\17bee4d6dac55f681b3b56978cd3196a99b2fbee\\output\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_rank_group.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_rank_group.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_news.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_news.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_timeline.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_timeline.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_rank_header.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\layout_rank_header.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\17bee4d6dac55f681b3b56978cd3196a99b2fbee\\output\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\17bee4d6dac55f681b3b56978cd3196a99b2fbee\\output\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_toolbar.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\layout_toolbar.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_dialog.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_dialog.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_blank.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_blank.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_match_new.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_match_new.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_spinner.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_spinner.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_bottom_navigation_item.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\17bee4d6dac55f681b3b56978cd3196a99b2fbee\\output\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about_us.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\activity_about_us.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\\output\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\\output\\res\\layout\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\17bee4d6dac55f681b3b56978cd3196a99b2fbee\\output\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_match_detail.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\activity_match_detail.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_language.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\dialog_language.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_club_detail.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\activity_club_detail.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_match_not_played.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\activity_match_not_played.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_drawer_league.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_drawer_league.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_rank_group.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_rank_group.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_settings.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_settings.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_news_card.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\custom_news_card.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_top_score.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_top_score.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_odd.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_odd.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_schedule.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_schedule.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_top_scorer_item.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\custom_top_scorer_item.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\\output\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_schedule_cl.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_schedule_cl.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\\output\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_lineups_firstteam.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\item_lineups_firstteam.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_odds.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\fragment_odds.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_settings_reminder.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\layout\\dialog_settings_reminder.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\layout\\abc_search_view.xml"
+    }
+]

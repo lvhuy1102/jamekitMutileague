@@ -1,0 +1,46 @@
+package com.hcpt.multileagues.utilities;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
+public class DateTimeUtility {
+
+	public static String convertTimeStampToDate(String timeStamp,
+			String outputFormat) {
+		if (timeStamp == null || timeStamp.equals("")) {
+			timeStamp = "0";
+		}
+		SimpleDateFormat formater = new SimpleDateFormat(outputFormat,
+				Locale.getDefault());
+		Date date = new Date(Long.parseLong(timeStamp) * 1000);
+		return formater.format(date);
+	}
+
+	public static long getDateDiff(Date curDate, Date specDate,
+			TimeUnit timeUnit) {
+		long diff = curDate.getTime() - specDate.getTime();
+		return timeUnit.convert(diff, TimeUnit.MILLISECONDS);
+	}
+
+	public static String formatDate(Date date, String outputFormat) {
+		SimpleDateFormat formater = new SimpleDateFormat(outputFormat,
+				Locale.getDefault());
+		return formater.format(date);
+	}
+
+	public static String convertTimeStampToStartOfDate(String timeStamp) {
+		String result = "";
+
+		String strDate = DateTimeUtility.convertTimeStampToDate(
+				timeStamp.substring(0, timeStamp.length() - 3), "MM/dd/yyyy")
+				+ " 00:00:00";
+		Date date = new Date(strDate);
+
+		result = (date.getTime() + "").substring(0,
+				(date.getTime() + "").length() - 3);
+
+		return result;
+	}
+}

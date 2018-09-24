@@ -1,0 +1,191 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fr_rank"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/margin_layout"
+    android:paddingRight="@dimen/margin_layout">
+
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/lnl_infor"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_tabs"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.65"
+            android:text="#"
+            android:textColor="@color/textColorPrimary" />
+
+
+        <TextView
+            android:textColor="@color/textColorPrimary"
+            android:text="Teams"
+            android:layout_width="0dp"
+            android:textSize="@dimen/text_size_xlarge"
+            android:layout_height="wrap_content"
+            android:layout_weight="3" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/mp"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/padding_small"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="@string/text_w"
+            android:paddingTop="@dimen/padding_small"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_d"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/padding_small"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_l"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/padding_small"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_gd"
+            android:paddingTop="@dimen/padding_small"
+            android:gravity="center_horizontal"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="@string/text_pts"
+            android:paddingTop="@dimen/padding_small"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/padding_horizontal"
+        android:layout_marginRight="@dimen/padding_horizontal"
+        android:background="@color/blue"
+        android:visibility="gone" />
+    <View
+        android:id="@+id/view"
+        android:layout_below="@id/lnl_infor"
+        android:background="@color/line_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <FrameLayout
+        android:layout_above="@+id/view2"
+        android:id="@+id/frame"
+        android:layout_below="@id/view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/lv_rank_clubs"
+            android:layout_width="match_parent"
+            android:divider="@null"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/lbl_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/text_no_events"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_large"
+            android:visibility="gone" />
+    </FrameLayout>
+    <View
+        android:id="@+id/view2"
+        android:layout_marginTop="8dp"
+        android:layout_above="@+id/lnl_status"
+        android:background="@color/line_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:id="@+id/lnl_status"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:paddingLeft="30dp"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="MP : Matches Played"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="D    : Draw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="GD : Goal Differences"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="40dp"
+            android:gravity="left"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="W : Won"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="L  : Lost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="P  : Point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

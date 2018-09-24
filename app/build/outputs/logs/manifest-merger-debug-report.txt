@@ -1,0 +1,441 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:2:1-86:12
+	package
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:3:5-38
+		INJECTED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml
+		INJECTED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml
+		INJECTED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml
+		INJECTED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\LeQuan\.android\build-cache\575c2259e4af8cabc798654dddbdfc2516cfca50\output\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\LeQuan\.android\build-cache\add4712da1abc2118f0e14ef6bb55fb79ea04cf7\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\LeQuan\.android\build-cache\a0abf8a8d5157ed396220a47b2e3bc17856fe5a7\output\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:6:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\LeQuan\.android\build-cache\575c2259e4af8cabc798654dddbdfc2516cfca50\output\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\LeQuan\.android\build-cache\add4712da1abc2118f0e14ef6bb55fb79ea04cf7\output\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\LeQuan\.android\build-cache\a0abf8a8d5157ed396220a47b2e3bc17856fe5a7\output\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:7:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:8:22-78
+uses-permission#android.permission.VIBRATE
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:9:5-66
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:9:22-63
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:10:5-78
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:10:22-75
+uses-permission#android.permission.SYSTEM_OVERLAY_WINDOW
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:11:22-77
+uses-permission#android.permission.GET_TASKS
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:12:5-68
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:12:22-65
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:14:5-71
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:14:22-68
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:15:5-68
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\LeQuan\.android\build-cache\add4712da1abc2118f0e14ef6bb55fb79ea04cf7\output\AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\LeQuan\.android\build-cache\a0abf8a8d5157ed396220a47b2e3bc17856fe5a7\output\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:15:22-65
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:16:5-75
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:16:22-72
+permission#mobi.letsplay.livescore.permission.C2D_MESSAGE
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:19:5-21:47
+MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:28:5-30:47
+	android:protectionLevel
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:21:9-44
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:20:9-70
+application
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:23:5-84:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\LeQuan\.android\build-cache\2cf92ee54e0d82a31ac669cad96ee12f0395ba9d\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:customtabs:26.1.0] C:\Users\LeQuan\.android\build-cache\f538bb2a94a3ee92d1e2382c1bd77279ac7ded82\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\LeQuan\.android\build-cache\575c2259e4af8cabc798654dddbdfc2516cfca50\output\AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\LeQuan\.android\build-cache\e571b7d1c68460756fff4f16b29564b9a01951cb\output\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\LeQuan\.android\build-cache\2d7d0ef904059a86c3a6859df64df2732e2105ec\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\LeQuan\.android\build-cache\b3315e9294b8221c691399781d1e71b41586fb63\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.facebook.stetho:stetho:1.5.0] C:\Users\LeQuan\.android\build-cache\7ae5213125e8aead169a3e3d0ae1be8870e8dca5\output\AndroidManifest.xml:11:5-20
+MERGED from [com.google.firebase:firebase-core:16.0.1] C:\Users\LeQuan\.android\build-cache\695ff755fba8e1bec517e84b389e76528e6862b8\output\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\LeQuan\.android\build-cache\add4712da1abc2118f0e14ef6bb55fb79ea04cf7\output\AndroidManifest.xml:26:5-32:19
+MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:28:5-53:19
+MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\LeQuan\.android\build-cache\a0abf8a8d5157ed396220a47b2e3bc17856fe5a7\output\AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\LeQuan\.android\build-cache\2bc77a617da04b176e146990311f46890cd4397d\output\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\LeQuan\.android\build-cache\f02d8e2639d7d648946d5196be3a849f8d7e6e50\output\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-messaging:17.1.0] C:\Users\LeQuan\.android\build-cache\8abd218199543a64eee4bbfdd24af52429e8751b\output\AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:34:5-63:19
+MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\LeQuan\.android\build-cache\63f899984ac91cc5139621087b94ec4370eb60a9\output\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\LeQuan\.android\build-cache\070c54c1f7114365612e2da3ab9ddc0798b6ddaa\output\AndroidManifest.xml:8:5-14:19
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\LeQuan\.android\build-cache\76cc87313afa9d7d5b164212c601aaa7b929d8c4\output\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\LeQuan\.android\build-cache\a0afafb87668711ba16f0482a5a4a6e9240f679e\output\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\LeQuan\.android\build-cache\7880fbbec789e4e749e1ba5adc4bc8738f3be160\output\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\LeQuan\.android\build-cache\7b4e8b46b7043b22fac777e596e7afb63765cd29\output\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\LeQuan\.android\build-cache\3ce31ce1e7c153a0c986bd5e381fd4bf1d8cda48\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.karumi:dexter:4.2.0] C:\Users\LeQuan\.android\build-cache\4963b934e085fb923cf27dd68e13f4ac89e1d1a2\output\AndroidManifest.xml:26:5-30:19
+MERGED from [com.android.support:design:26.1.0] C:\Users\LeQuan\.android\build-cache\0b3b887fd16cbc2dcb37873f1a654659f646bec7\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\LeQuan\.android\build-cache\2c1181a617cbe91da67969bcc479c9de3602b31c\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\LeQuan\.android\build-cache\ff474508a49e785bc5c908e0b0d7bbe58d4cb226\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\LeQuan\.android\build-cache\9ca40d9dd0376ff247201af4129d986ac634f4a1\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\LeQuan\.android\build-cache\fd2b3c26e8cd140c60efc78ae499e0d6484f9934\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] C:\Users\LeQuan\.android\build-cache\c0726b2016c62ff7f4d797fb06f72d88635b41af\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\LeQuan\.android\build-cache\0385803e28267ec875fd75823f92858ee9375ce1\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\LeQuan\.android\build-cache\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\LeQuan\.android\build-cache\693b7c6ccdc3cf9aaaa4d775a5248c2ecc2f1a7f\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\LeQuan\.android\build-cache\2c89182cb4d820c1f00efd7152bd28528670ebbb\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\LeQuan\.android\build-cache\79e761e09fa1b0555391a833aa0d446e95568dd2\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\LeQuan\.android\build-cache\17bee4d6dac55f681b3b56978cd3196a99b2fbee\output\AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\LeQuan\.android\build-cache\238e4c5c3a6043d9c9fc618b84e5944a9541b5c0\output\AndroidManifest.xml:24:5-28:19
+	android:label
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:28:9-41
+	android:hardwareAccelerated
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:26:9-43
+	android:allowBackup
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:25:9-35
+	android:icon
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:27:9-40
+	android:theme
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:30:9-52
+	android:logo
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:29:9-40
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:24:9-49
+meta-data#com.google.android.gms.version
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:31:9-33:69
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\LeQuan\.android\build-cache\3ce31ce1e7c153a0c986bd5e381fd4bf1d8cda48\output\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:33:13-66
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:32:13-58
+activity#mobi.letsplay.livescore.activities.SplashActivity
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:35:9-44:20
+	android:screenOrientation
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:38:13-49
+	android:launchMode
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:37:13-43
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:36:13-54
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:39:13-43:29
+action#android.intent.action.MAIN
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:40:17-69
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:40:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:42:17-77
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:42:27-74
+activity#mobi.letsplay.livescore.activities.MainActivity
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:45:9-48:46
+	android:launchMode
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:48:13-43
+	android:configChanges
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:47:13-74
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:46:13-52
+activity#mobi.letsplay.livescore.activities.ClubDetailActivity
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:49:9-52:46
+	android:launchMode
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:52:13-43
+	android:configChanges
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:51:13-74
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:50:13-58
+activity#mobi.letsplay.livescore.activities.MatchDetailActivity
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:53:9-56:46
+	android:launchMode
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:56:13-43
+	android:configChanges
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:55:13-74
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:54:13-59
+activity#mobi.letsplay.livescore.activities.MatchDetailNotPlayedActivity
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:57:9-60:46
+	android:launchMode
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:60:13-43
+	android:configChanges
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:59:13-74
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:58:13-68
+receiver#mobi.letsplay.livescore.services.AlarmMatchService
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:62:9-64:38
+	android:enabled
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:64:13-35
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:63:13-55
+receiver#mobi.letsplay.livescore.services.AlarmReceiver
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:65:9-67:38
+	android:enabled
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:67:13-35
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:66:13-51
+activity#com.google.android.gms.ads.AdActivity
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:69:9-72:64
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\LeQuan\.android\build-cache\575c2259e4af8cabc798654dddbdfc2516cfca50\output\AndroidManifest.xml:29:9-33:64
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\LeQuan\.android\build-cache\575c2259e4af8cabc798654dddbdfc2516cfca50\output\AndroidManifest.xml:32:13-37
+	android:configChanges
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:71:13-122
+	android:theme
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:72:13-61
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:70:13-65
+activity#mobi.letsplay.livescore.activities.AboutUsActivity
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:73:9-75:77
+	android:configChanges
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:75:13-74
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:74:13-55
+activity#mobi.letsplay.livescore.activities.MatchDetailNotPlayed
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:76:9-78
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:76:19-66
+service#mobi.letsplay.livescore.fcm.MyFirebaseMessagingService
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:79:9-83:19
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:79:18-64
+intent-filter#com.google.firebase.MESSAGING_EVENT
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:80:13-82:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:81:17-78
+	android:name
+		ADDED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml:81:25-75
+uses-sdk
+INJECTED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\LeQuan\.android\build-cache\2cf92ee54e0d82a31ac669cad96ee12f0395ba9d\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\LeQuan\.android\build-cache\1c93e3c749dd45d16e09bb311a8487dd990c0c8b\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:customtabs:26.1.0] C:\Users\LeQuan\.android\build-cache\f538bb2a94a3ee92d1e2382c1bd77279ac7ded82\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\LeQuan\.android\build-cache\575c2259e4af8cabc798654dddbdfc2516cfca50\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\LeQuan\.android\build-cache\e571b7d1c68460756fff4f16b29564b9a01951cb\output\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\LeQuan\.android\build-cache\2d7d0ef904059a86c3a6859df64df2732e2105ec\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:multidex:1.0.1] C:\Users\LeQuan\.android\build-cache\ed1860b1ab69f4d9f3363ad03bb65c17bbe1502b\output\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\LeQuan\.android\build-cache\b3315e9294b8221c691399781d1e71b41586fb63\output\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.stetho:stetho:1.5.0] C:\Users\LeQuan\.android\build-cache\7ae5213125e8aead169a3e3d0ae1be8870e8dca5\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.joooonho:selectableroundedimageview:1.0.1] C:\Users\LeQuan\.android\build-cache\80fa4f01092a8128986e304ce3ab2b5d78a35568\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-core:16.0.1] C:\Users\LeQuan\.android\build-cache\695ff755fba8e1bec517e84b389e76528e6862b8\output\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\LeQuan\.android\build-cache\add4712da1abc2118f0e14ef6bb55fb79ea04cf7\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\LeQuan\.android\build-cache\a0abf8a8d5157ed396220a47b2e3bc17856fe5a7\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\LeQuan\.android\build-cache\2bc77a617da04b176e146990311f46890cd4397d\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\LeQuan\.android\build-cache\f02d8e2639d7d648946d5196be3a849f8d7e6e50\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:17.1.0] C:\Users\LeQuan\.android\build-cache\8abd218199543a64eee4bbfdd24af52429e8751b\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\LeQuan\.android\build-cache\63f899984ac91cc5139621087b94ec4370eb60a9\output\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\LeQuan\.android\build-cache\070c54c1f7114365612e2da3ab9ddc0798b6ddaa\output\AndroidManifest.xml:5:5-6:37
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\LeQuan\.android\build-cache\76cc87313afa9d7d5b164212c601aaa7b929d8c4\output\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\LeQuan\.android\build-cache\a0afafb87668711ba16f0482a5a4a6e9240f679e\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\LeQuan\.android\build-cache\7880fbbec789e4e749e1ba5adc4bc8738f3be160\output\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\LeQuan\.android\build-cache\7b4e8b46b7043b22fac777e596e7afb63765cd29\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\LeQuan\.android\build-cache\3ce31ce1e7c153a0c986bd5e381fd4bf1d8cda48\output\AndroidManifest.xml:20:5-44
+MERGED from [com.karumi:dexter:4.2.0] C:\Users\LeQuan\.android\build-cache\4963b934e085fb923cf27dd68e13f4ac89e1d1a2\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:design:26.1.0] C:\Users\LeQuan\.android\build-cache\0b3b887fd16cbc2dcb37873f1a654659f646bec7\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\LeQuan\.android\build-cache\2c1181a617cbe91da67969bcc479c9de3602b31c\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\LeQuan\.android\build-cache\ff474508a49e785bc5c908e0b0d7bbe58d4cb226\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\LeQuan\.android\build-cache\9ca40d9dd0376ff247201af4129d986ac634f4a1\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\LeQuan\.android\build-cache\fd2b3c26e8cd140c60efc78ae499e0d6484f9934\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] C:\Users\LeQuan\.android\build-cache\c0726b2016c62ff7f4d797fb06f72d88635b41af\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\LeQuan\.android\build-cache\0385803e28267ec875fd75823f92858ee9375ce1\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\LeQuan\.android\build-cache\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\LeQuan\.android\build-cache\693b7c6ccdc3cf9aaaa4d775a5248c2ecc2f1a7f\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\LeQuan\.android\build-cache\2c89182cb4d820c1f00efd7152bd28528670ebbb\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\LeQuan\.android\build-cache\79e761e09fa1b0555391a833aa0d446e95568dd2\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\LeQuan\.android\build-cache\17bee4d6dac55f681b3b56978cd3196a99b2fbee\output\AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\LeQuan\.android\build-cache\238e4c5c3a6043d9c9fc618b84e5944a9541b5c0\output\AndroidManifest.xml:20:5-22:41
+	tools:overrideLibrary
+		ADDED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\LeQuan\.android\build-cache\1c93e3c749dd45d16e09bb311a8487dd990c0c8b\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml
+		INJECTED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml
+		INJECTED from E:\CP software\jameKit Multipe League\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:customtabs:26.1.0] C:\Users\LeQuan\.android\build-cache\f538bb2a94a3ee92d1e2382c1bd77279ac7ded82\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\LeQuan\.android\build-cache\b3315e9294b8221c691399781d1e71b41586fb63\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:design:26.1.0] C:\Users\LeQuan\.android\build-cache\0b3b887fd16cbc2dcb37873f1a654659f646bec7\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\LeQuan\.android\build-cache\2c1181a617cbe91da67969bcc479c9de3602b31c\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\LeQuan\.android\build-cache\ff474508a49e785bc5c908e0b0d7bbe58d4cb226\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\LeQuan\.android\build-cache\9ca40d9dd0376ff247201af4129d986ac634f4a1\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\LeQuan\.android\build-cache\fd2b3c26e8cd140c60efc78ae499e0d6484f9934\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\LeQuan\.android\build-cache\c0726b2016c62ff7f4d797fb06f72d88635b41af\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\LeQuan\.android\build-cache\0385803e28267ec875fd75823f92858ee9375ce1\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\LeQuan\.android\build-cache\60dd80f45e5f7e41473fb7df31b5b9f1d146f3e0\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\LeQuan\.android\build-cache\693b7c6ccdc3cf9aaaa4d775a5248c2ecc2f1a7f\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\LeQuan\.android\build-cache\2c89182cb4d820c1f00efd7152bd28528670ebbb\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\LeQuan\.android\build-cache\79e761e09fa1b0555391a833aa0d446e95568dd2\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\LeQuan\.android\build-cache\17bee4d6dac55f681b3b56978cd3196a99b2fbee\output\AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:customtabs:26.1.0] C:\Users\LeQuan\.android\build-cache\f538bb2a94a3ee92d1e2382c1bd77279ac7ded82\output\AndroidManifest.xml:25:13-35
+	android:name
+		ADDED from [com.android.support:customtabs:26.1.0] C:\Users\LeQuan\.android\build-cache\f538bb2a94a3ee92d1e2382c1bd77279ac7ded82\output\AndroidManifest.xml:24:13-51
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\LeQuan\.android\build-cache\add4712da1abc2118f0e14ef6bb55fb79ea04cf7\output\AndroidManifest.xml:27:9-31:19
+MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:35:9-39:19
+	android:name
+		ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\LeQuan\.android\build-cache\add4712da1abc2118f0e14ef6bb55fb79ea04cf7\output\AndroidManifest.xml:27:18-89
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\LeQuan\.android\build-cache\add4712da1abc2118f0e14ef6bb55fb79ea04cf7\output\AndroidManifest.xml:28:13-30:85
+	android:value
+		ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\LeQuan\.android\build-cache\add4712da1abc2118f0e14ef6bb55fb79ea04cf7\output\AndroidManifest.xml:30:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\LeQuan\.android\build-cache\add4712da1abc2118f0e14ef6bb55fb79ea04cf7\output\AndroidManifest.xml:29:17-139
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:26:5-110
+MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\LeQuan\.android\build-cache\a0abf8a8d5157ed396220a47b2e3bc17856fe5a7\output\AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:30:13-85
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:34:9-42:20
+MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\LeQuan\.android\build-cache\a0abf8a8d5157ed396220a47b2e3bc17856fe5a7\output\AndroidManifest.xml:29:9-37:20
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:36:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:37:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:38:13-69
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:35:13-100
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:39:13-41:29
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:40:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:40:25-76
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:44:9-47:40
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:46:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:45:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:48:9-52:72
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:50:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:51:13-37
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:52:13-69
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\LeQuan\.android\build-cache\ff690626a1f5e1449dc7b9671bfab32eb91e26a3\output\AndroidManifest.xml:49:13-87
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:17.1.0] C:\Users\LeQuan\.android\build-cache\8abd218199543a64eee4bbfdd24af52429e8751b\output\AndroidManifest.xml:28:9-34:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:17.1.0] C:\Users\LeQuan\.android\build-cache\8abd218199543a64eee4bbfdd24af52429e8751b\output\AndroidManifest.xml:30:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:17.1.0] C:\Users\LeQuan\.android\build-cache\8abd218199543a64eee4bbfdd24af52429e8751b\output\AndroidManifest.xml:29:13-82
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:26:22-79
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:32:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:32:22-76
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:36:13-38:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:38:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:37:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:41:9-50:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:43:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:44:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:42:13-78
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:45:13-49:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:46:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:46:25-78
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:48:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:48:27-58
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:56:9-62:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:58:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:57:13-77
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:59:13-61:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:59:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:60:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\LeQuan\.android\build-cache\3629808f641d4d32bc38144106a6fddd173bf821\output\AndroidManifest.xml:60:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\LeQuan\.android\build-cache\070c54c1f7114365612e2da3ab9ddc0798b6ddaa\output\AndroidManifest.xml:9:9-13:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\LeQuan\.android\build-cache\070c54c1f7114365612e2da3ab9ddc0798b6ddaa\output\AndroidManifest.xml:11:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\LeQuan\.android\build-cache\070c54c1f7114365612e2da3ab9ddc0798b6ddaa\output\AndroidManifest.xml:12:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\LeQuan\.android\build-cache\070c54c1f7114365612e2da3ab9ddc0798b6ddaa\output\AndroidManifest.xml:13:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\LeQuan\.android\build-cache\070c54c1f7114365612e2da3ab9ddc0798b6ddaa\output\AndroidManifest.xml:10:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\LeQuan\.android\build-cache\a0afafb87668711ba16f0482a5a4a6e9240f679e\output\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\LeQuan\.android\build-cache\a0afafb87668711ba16f0482a5a4a6e9240f679e\output\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\LeQuan\.android\build-cache\a0afafb87668711ba16f0482a5a4a6e9240f679e\output\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\LeQuan\.android\build-cache\a0afafb87668711ba16f0482a5a4a6e9240f679e\output\AndroidManifest.xml:24:13-79
+activity#com.karumi.dexter.DexterActivity
+ADDED from [com.karumi:dexter:4.2.0] C:\Users\LeQuan\.android\build-cache\4963b934e085fb923cf27dd68e13f4ac89e1d1a2\output\AndroidManifest.xml:27:9-29:72
+	android:theme
+		ADDED from [com.karumi:dexter:4.2.0] C:\Users\LeQuan\.android\build-cache\4963b934e085fb923cf27dd68e13f4ac89e1d1a2\output\AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.karumi:dexter:4.2.0] C:\Users\LeQuan\.android\build-cache\4963b934e085fb923cf27dd68e13f4ac89e1d1a2\output\AndroidManifest.xml:28:13-60
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\LeQuan\.android\build-cache\238e4c5c3a6043d9c9fc618b84e5944a9541b5c0\output\AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\LeQuan\.android\build-cache\238e4c5c3a6043d9c9fc618b84e5944a9541b5c0\output\AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\LeQuan\.android\build-cache\238e4c5c3a6043d9c9fc618b84e5944a9541b5c0\output\AndroidManifest.xml:26:13-58

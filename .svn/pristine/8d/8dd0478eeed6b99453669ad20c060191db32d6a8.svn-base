@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
+    <ImageView
+        android:id="@+id/image_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_item_seduche"
+        android:layout_width="match_parent"
+        android:layout_height="90dp" />
+    <ImageView
+        android:id="@+id/img_infor"
+        app:layout_constraintTop_toTopOf="@+id/image_bg"
+        app:layout_constraintRight_toRightOf="@+id/image_bg"
+        app:layout_constraintLeft_toLeftOf="@+id/image_bg"
+        android:background="@drawable/item"
+        android:layout_width="240dp"
+        android:layout_height="30dp" />
+    <TextView
+        android:id="@+id/lbl_date_match"
+        android:textColor="@color/textColorPrimary"
+        app:layout_constraintLeft_toLeftOf="@+id/img_infor"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_nofitication"
+        app:layout_constraintRight_toLeftOf="@+id/tv_nofitication"
+        app:layout_constraintTop_toTopOf="@+id/tv_nofitication"
+        android:text="19:07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_nofitication"
+        app:layout_constraintRight_toRightOf="@+id/img_infor"
+        app:layout_constraintLeft_toLeftOf="@+id/img_infor"
+        app:layout_constraintBottom_toBottomOf="@+id/img_infor"
+        app:layout_constraintTop_toTopOf="@+id/img_infor"
+        android:background="@drawable/ic_brightness_1_black_24dp"
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
+    <TextView
+        android:id="@+id/lbl_time_match"
+        android:textColor="@color/textColorPrimary"
+        android:text="Finish"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_nofitication"
+        app:layout_constraintTop_toTopOf="@+id/tv_nofitication"
+        app:layout_constraintRight_toRightOf="@+id/img_infor"
+        app:layout_constraintLeft_toRightOf="@+id/tv_nofitication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/textColorPrimary"
+        android:textSize="16dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintLeft_toLeftOf="@+id/image_bg"
+        android:id="@+id/lbl_name_team1"
+        app:layout_constraintBottom_toBottomOf="@+id/image_bg"
+        app:layout_constraintTop_toBottomOf="@+id/img_infor"
+        android:text="Asenal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/textColorPrimary"
+        android:textSize="16dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintRight_toRightOf="@+id/image_bg"
+        android:id="@+id/lbl_name_team2"
+        app:layout_constraintBottom_toBottomOf="@+id/image_bg"
+        app:layout_constraintTop_toBottomOf="@+id/img_infor"
+        android:text="Chelsea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_two_dot"
+        app:layout_constraintTop_toTopOf="@+id/tv_two_dot"
+        app:layout_constraintRight_toLeftOf="@+id/tv_two_dot"
+        android:textSize="30dp"
+        android:textColor="#160af1"
+        android:id="@+id/lbl_home_score"
+        android:text="2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_two_dot"
+        app:layout_constraintRight_toRightOf="@+id/image_bg"
+        app:layout_constraintLeft_toLeftOf="@+id/image_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/image_bg"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nofitication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" : "
+        android:textColor="#160af1"
+        android:textSize="30dp" />
+    <TextView
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_two_dot"
+        app:layout_constraintTop_toTopOf="@+id/tv_two_dot"
+        app:layout_constraintLeft_toRightOf="@+id/tv_two_dot"
+        android:id="@+id/lbl_away_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textColor="#160af1"
+        android:textSize="30dp" />
+    <TextView
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/lbl_vs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:gravity="center_horizontal"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="Saopaolo"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/text_size_small" />
+
+</android.support.constraint.ConstraintLayout>

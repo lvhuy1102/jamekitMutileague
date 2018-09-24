@@ -1,0 +1,66 @@
+package com.hcpt.multileagues.activities;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+
+import com.hcpt.multileagues.GcmManager;
+import com.hcpt.multileagues.MyGcmSharedPrefrences;
+import com.hcpt.multileagues.R;
+import com.hcpt.multileagues.RegistrationIntentService;
+import com.hcpt.multileagues.configs.AppUtils;
+import com.hcpt.multileagues.configs.FruitySharedPreferences;
+import com.hcpt.multileagues.configs.GlobalValue;
+import com.hcpt.multileagues.modelmanager.ModelManager;
+import com.hcpt.multileagues.network.NetworkUtility;
+import com.hcpt.multileagues.utilities.ExceptionHandler;
+import com.hcpt.multileagues.utilities.StringUtility;
+
+public class SplashActivity extends ActionBarActivity {
+
+    private Handler mHandler;
+    private Context self;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_splash);
+        try {
+            getSupportActionBar().hide();
+        } catch (NullPointerException ex) {
+            ex.printStackTrace();
+        }
+//        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
+        self = this;
+
+        if (GlobalValue.prefs == null) {
+            GlobalValue.prefs = new FruitySharedPreferences(self);
+        }
+
+        // Push notification.
+        if (NetworkUtility.getInstance(self).isNetworkAvailable()) {
+            if(AppUtils.checkPlayServices(this)){
+                Intent intent = new Intent(this, RegistrationIntentService.class);
+                startService(intent);
+            }
+        }
+
+        this.mHandler = new Handler();
+        mHandler.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+
+                Intent intent = new Intent(SplashActivity.this,
+                        MainActivity.class);
+                SplashActivity.this.startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,
+                        R.anim.slide_out_left);
+                finish();
+            }
+        }, 1500);
+    }
+}

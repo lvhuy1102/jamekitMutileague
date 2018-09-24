@@ -1,0 +1,82 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_league"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_color">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--<com.hcpt.multileagues.pagerslidingstabstrip.PagerSlidingTabStrip-->
+                <!--android:id="@+id/tabs"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/height_tabs"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:background="@color/background_tab"-->
+                <!--app:pstsDividerColor="@color/tranparent"-->
+                <!--app:pstsIndicatorColor="@color/red"-->
+                <!--app:pstsIndicatorHeight="4dp"-->
+                <!--app:pstsUnderlineColor="@color/red"-->
+                <!--app:pstsUnderlineHeight="1dp" />-->
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                app:tabTextAppearance="@style/CustomMainTabText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_tabs"
+                android:background="@color/background_tab"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:tabIndicatorColor="@color/tab_indicator_color"
+                app:tabIndicatorHeight="4dp"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="#acb6d9" />
+
+            <TextView
+                android:id="@+id/border_bottom_tab"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tabs"
+                android:visibility="gone"
+                android:background="@color/tab_indicator_color"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ll_admob"
+                android:layout_below="@id/border_bottom_tab"
+                android:background="@color/white"
+                tools:context=".MainActivity" />
+
+            <LinearLayout
+                android:id="@+id/ll_admob"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_admob"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="@color/black"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/lv_league"
+        android:layout_width="@dimen/width_league_drawer"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:paddingBottom="@dimen/padding_vertical" />
+
+</android.support.v4.widget.DrawerLayout>

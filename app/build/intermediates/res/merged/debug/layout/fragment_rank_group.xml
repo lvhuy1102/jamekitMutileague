@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fr_rank"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_horizontal"
+        android:paddingLeft="@dimen/padding_small">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.65"
+            android:gravity="center_vertical"
+            android:text="#"
+            android:textSize="@dimen/text_size_large"
+            android:layout_marginLeft="@dimen/margin_horizontal"
+            android:textColor="@color/textColorPrimary" />
+
+
+        <TextView
+            android:textColor="@color/textColorPrimary"
+            android:text="Teams"
+            android:layout_width="0dp"
+            android:textSize="@dimen/text_size_xlarge"
+            android:layout_height="wrap_content"
+            android:layout_weight="3" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/padding_small"
+            android:text="MP"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/padding_small"
+            android:text="@string/text_w"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/padding_small"
+            android:text="@string/text_d"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/padding_small"
+            android:text="@string/text_l"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/padding_small"
+            android:text="@string/text_gd"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/padding_small"
+            android:text="@string/text_pts"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/header"
+        android:layout_marginLeft="@dimen/padding_horizontal"
+        android:layout_marginRight="@dimen/padding_horizontal"
+        android:background="@color/blue"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcl_rank"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view" />
+
+    <TextView
+        android:id="@+id/lbl_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:text="@string/text_no_events"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone" />
+
+</RelativeLayout>

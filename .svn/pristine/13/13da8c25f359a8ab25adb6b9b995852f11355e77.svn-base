@@ -1,0 +1,132 @@
+package com.hcpt.multileagues.configs;
+
+public class JsonConfigs {
+
+    // Common
+    public static final String JSON_STATUS_SUCCESS = "success";
+    public static final String JSON_STATUS_ERROR = "error";
+    public static final String KEY_JSON_STATUS = "status";
+    public static final String KEY_JSON_DEMO = "demo";
+    public static final String KEY_JSON_DATA = "data";
+
+    // Clubs
+    public static final String KEY_CLUB_ID = "id";
+    public static final String KEY_CLUB_NAME = "name";
+    public static final String KEY_CLUB_IMAGE = "image";
+    public static final String KEY_CLUB_PLAYED = "played";
+    public static final String KEY_CLUB_WIN = "win";
+    public static final String KEY_CLUB_DRAW = "draw";
+    public static final String KEY_CLUB_LOSE = "lose";
+    public static final String KEY_CLUB_MGFOR = "mgFor";
+    public static final String KEY_CLUB_MGAGAINST = "mgAgainst";
+    public static final String KEY_CLUB_GD = "gDiff";
+    public static final String KEY_CLUB_PTS = "point";
+    public static final String KEY_CLUB_MANAGER = "manager";
+    public static final String KEY_CLUB_NICKNAME = "nickname";
+    public static final String KEY_CLUB_ESTABLISHED = "established";
+    public static final String KEY_CLUB_STADIUM = "stadium";
+    public static final String KEY_CLUB_URL = "clubUrl";
+    public static final String KEY_CLUB_GROUP = "group";
+    public static final String KEY_CLUB_POSITION = "position";
+
+    // Match
+    public static final String KEY_LEAGUEID = "leagueId";
+    public static final String KEY_MATCH_ID = "id";
+    public static final String KEY_MATCH_HOME = "home";
+    public static final String KEY_MATCH_HOME_NAME = "homeName";
+    public static final String KEY_MATCH_HOME_IMAGE = "homeImage";
+    public static final String KEY_MATCH_AWAY = "away";
+    public static final String KEY_MATCH_AWAY_NAME = "awayName";
+    public static final String KEY_MATCH_AWAY_IMAGE = "awayImage";
+    public static final String KEY_MATCH_HOME_SCORE = "homeScore";
+    public static final String KEY_MATCH_AWAY_SCORE = "awayScore";
+    public static final String KEY_MATCH_STADIUM = "stadium";
+    public static final String KEY_MATCH_TIME = "time";
+    public static final String KEY_MATCH_STATUS = "status";
+    public static final String KEY_MATCH_ROUND = "round";
+
+    // String match status.
+    public static final String MATCH_STATUS_NOT_STARTED = "0";
+    public static final String MATCH_STATUS_ACTIVE = "1";
+    public static final String MATCH_STATUS_FINISHED = "2";
+
+    // Top scorer
+    public static final String KEY_TOP_SCORER_ID = "id";
+    public static final String KEY_TOP_SCORER_PLAYER = "player";
+    public static final String KEY_TOP_SCORER_CLUB = "clubImage";
+    public static final String KEY_TOP_SCORER_GOAL = "goal";
+
+    // Match detail
+    public static final String KEY_MATCH_DETAIL_ID = "id";
+    public static final String KEY_MATCH_DETAIL_MINUTE = "minute";
+    public static final String KEY_MATCH_DETAIL_HOME = "home";
+    public static final String KEY_MATCH_DETAIL_AWAY = "away";
+    public static final String KEY_MATCH_DETAIL_HOMESCORE = "homeScore";
+    public static final String KEY_MATCH_DETAIL_AWAYSCORE = "awayScore";
+    public static final String KEY_MATCH_DETAIL_STADIUM = "stadium";
+    public static final String KEY_MATCH_DETAIL_TIME = "time";
+    public static final String KEY_MATCH_DETAIL_STATUS = "status";
+    public static final String KEY_MATCH_DETAIL_HOME_PEN = "homePen";
+    public static final String KEY_MATCH_DETAIL_AWAY_PEN = "awayPen";
+
+    // Events.
+    public static final String KEY_EVENT_ID = "id";
+    public static final String KEY_EVENT_MATCH_ID = "matchId";
+    public static final String KEY_EVENT_PLAYER = "player";
+    public static final String KEY_EVENT_CLUB_ID = "clubId";
+    public static final String KEY_EVENT_MINUTE = "minute";
+    public static final String KEY_EVENT_IS_SCORE = "score";
+    public static final String KEY_EVENT_TYPE = "type";
+    public static final String KEY_EVENT_SCORES = "currentScore";
+
+    // String events type.
+    public static final String EVENTS_TYPE_GOAL = "1";
+    public static final String EVENTS_TYPE_RED_CARD = "2";
+    public static final String EVENTS_TYPE_YELLOW_CARD = "3";
+    public static final String EVENTS_TYPE_OWN_GOAL = "4";
+    public static final String EVENTS_TYPE_PENALTY = "5";
+    public static final String EVENTS_TYPE_IN = "6";
+    public static final String EVENTS_TYPE_OUT = "7";
+    public static final String IS_SCORE = "1";
+    public static final String NOT_IS_SCORE = "2";
+
+    // String lineups.
+    public static final String KEY_LINEUPS_ID = "id";
+    public static final String KEY_LINEUPS_MATCH_ID = "matchId";
+    public static final String KEY_LINEUPS_PLAYER_NAME = "name";
+    public static final String KEY_LINEUPS_PLAYER_NUMBER = "number";
+    public static final String KEY_LINEUPS_CLUB_ID = "clubId";
+    public static final String KEY_LINEUPS_POSITION = "position";
+
+    // Leagues
+    public static final String KEY_LEAGUE_ID = "id";
+    public static final String KEY_LEAGUE_NAME = "name";
+    public static final String KEY_LEAGUE_NAME_CHINESE = "name_zh";
+    public static final String KEY_LEAGUE_NAME_GERMAN = "name_de";
+    public static final String KEY_LEAGUE_NAME_SPANISH = "name_es";
+    public static final String KEY_LEAGUE_NAME_FRENCH = "name_fr";
+    public static final String KEY_LEAGUE_NAME_ITALIAN = "name_it";
+    public static final String KEY_LEAGUE_LOGO = "image";
+    public static final String KEY_LEAGUE_TYPE = "type";
+
+    // Round
+    public static final String KEY_ROUND_ID = "id";
+    public static final String KEY_ROUND_NAME = "name";
+    public static final String KEY_ROUND_CURRENT = "current";
+
+    // Odds
+    public static final String KEY_NAME = "name";
+    public static final String KEY_HOME = "home";
+    public static final String KEY_DRAW = "draw";
+    public static final String KEY_AWAY = "away";
+    public static final String KEY_URL = "url";
+
+    // Settings
+    public static final String KEY_SETTING_STATUS = "status";
+    public static final String KEY_SETTING_CLUBS = "clubId";
+
+    // Banner ads
+    public static final String KEY_ADS = "ads";
+    public static final String KEY_IMAGE = "image";
+    public static final String KEY_LINK = "link";
+}

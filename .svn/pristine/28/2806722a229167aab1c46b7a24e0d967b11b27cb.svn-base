@@ -1,0 +1,176 @@
+package com.hcpt.multileagues.fragments;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.hcpt.multileagues.R;
+import com.hcpt.multileagues.activities.ClubDetailActivity;
+import com.hcpt.multileagues.adapters.RankClubsAdapter;
+import com.hcpt.multileagues.configs.GlobalValue;
+import com.hcpt.multileagues.configs.WebservicesConfigs;
+import com.hcpt.multileagues.database.DatabaseUtility;
+import com.hcpt.multileagues.json.utils.ParserUtils;
+import com.hcpt.multileagues.modelmanager.ModelManager;
+import com.hcpt.multileagues.modelmanager.ModelManagerListener;
+import com.hcpt.multileagues.network.NetworkUtility;
+import com.hcpt.multileagues.objects.APIObj;
+import com.hcpt.multileagues.objects.RankClubsObj;
+
+import java.util.ArrayList;
+
+public class RankFragment extends Fragment {
+
+    private static final String TAG = "RankFragment";
+
+    private View view;
+    private ListView mLvRankClubs;
+    private RankClubsAdapter mRankClubAdapter;
+    private TextView mLblNoData;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Allow display option menu in this fragment.
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        view = inflater.inflate(R.layout.fragment_rank, container, false);
+
+        initView();
+        initRankClubs();
+
+        return view;
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        // TODO Auto-generated method stub
+        super.onPrepareOptionsMenu(menu);
+
+        // Hide filter menu.
+        MenuItem item = menu.findItem(R.id.action_filter);
+        item.setVisible(false);
+        menu.findItem(R.id.action_save).setVisible(false);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        menu.clear();
+        inflater.inflate(R.menu.menu_main, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_refresh) {
+            GlobalValue.arrRankClubs.clear();
+            initRankClubs();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    private void initView() {
+        mLvRankClubs = (ListView) view.findViewById(R.id.lv_rank_clubs);
+        mLblNoData = (TextView) view.findViewById(R.id.lbl_no_data);
+
+        // Init adapter
+        if (GlobalValue.arrRankClubs == null) {
+            GlobalValue.arrRankClubs = new ArrayList<>();
+        } else {
+            GlobalValue.arrRankClubs.clear();
+        }
+        mRankClubAdapter = new RankClubsAdapter(getActivity(), GlobalValue.arrRankClubs);
+        mLvRankClubs.setAdapter(mRankClubAdapter);
+
+        // Should call this method at the end of declaring UI
+        initControls();
+    }
+
+    private void initControls() {
+        mLvRankClubs.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+//                ClubDetailActivity.currentClub = GlobalValue.arrRankClubs.get(position);
+//                startActivity(new Intent(getActivity(), ClubDetailActivity.class));
+            }
+        });
+    }
+
+    public void initRankClubs() {
+        // Bind data for listview.
+        if (NetworkUtility.getInstance(getActivity()).isNetworkAvailable()) {
+            getRankFromAPI();
+        } else {
+            getRankFromDB();
+        }
+
+    }
+
+    private void getRankFromDB() {
+        APIObj apiInfos = DatabaseUtility.getResuftFromApi(getActivity(),
+                WebservicesConfigs.URL_GET_RANK_CLUBS + GlobalValue.leagueId);
+        if (apiInfos != null) {
+            String json = apiInfos.getmResult();
+
+            ArrayList<RankClubsObj> arrTemp = ParserUtils.parserRankClubs(json);
+
+            // Refresh the list
+            if (arrTemp != null && arrTemp.size() > 0) {
+                GlobalValue.arrRankClubs.addAll(arrTemp);
+                mRankClubAdapter.notifyDataSetChanged();
+
+                mLblNoData.setVisibility(View.GONE);
+            } else {
+                mLblNoData.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
+    private void getRankFromAPI() {
+        ModelManager.getClubs(getActivity(), true, new ModelManagerListener() {
+
+            @Override
+            public void onSuccess(Object object) {
+                String json = (String) object;
+                ArrayList<RankClubsObj> arrTemp = ParserUtils.parserRankClubs(json);
+
+                // Refresh the list
+                if (arrTemp != null && arrTemp.size() > 0) {
+                    GlobalValue.arrRankClubs.addAll(arrTemp);
+                    mRankClubAdapter.notifyDataSetChanged();
+
+                    mLblNoData.setVisibility(View.GONE);
+                } else {
+                    mLblNoData.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onError() {
+            }
+        });
+    }
+}

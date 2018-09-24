@@ -1,0 +1,98 @@
+[
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\splash.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\splash.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_yellow_card.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_yellow_card.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_arrow_down.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow_down.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checked.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_checked.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_action_filter.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_action_filter.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_calendar.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_calendar.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_ball.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_ball.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_arrow_up.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow_up.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_rename.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_rename.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_brightness_1_black_24dp.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_brightness_1_black_24dp.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_action_settings.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_action_settings.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_unchecker_new.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_unchecker_new.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_red_card.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_red_card.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_send.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_send.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_menu_white.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_white.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_action_refresh.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_action_refresh.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\toolbar.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\toolbar.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_penalty.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_penalty.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checker_new.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_checker_new.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_own_goal.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_own_goal.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_unchecked.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_unchecked.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_action_name.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable-mdpi\\ic_action_name.png"
+    }
+]

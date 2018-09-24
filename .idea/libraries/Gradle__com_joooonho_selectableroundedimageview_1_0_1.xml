@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.joooonho:selectableroundedimageview-1.0.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/80fa4f01092a8128986e304ce3ab2b5d78a35568/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/80fa4f01092a8128986e304ce3ab2b5d78a35568/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.joooonho/selectableroundedimageview/1.0.1/f57a957671f19826ddbd55500614a68c303e7298/selectableroundedimageview-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

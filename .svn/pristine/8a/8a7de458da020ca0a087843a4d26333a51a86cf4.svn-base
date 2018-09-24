@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="background_main">#f4f4f4</color>
+    <color name="background_rank_column">#dcdce2</color>
+    <color name="background_top_4">#ffffff</color>
+    <color name="actionbar_text">#ffffff</color>
+    <color name="tab_textColor">#ffffff</color>
+    <color name="textColor_curentRound">#fcc701</color>
+    <color name="tab_textColor_selected">#878787</color>
+    <color name="tab_textColor_unselected">#000000</color>
+    <color name="gray">#cccccc</color>
+    <color name="black">#000000</color>
+    <color name="red">#de0c15</color>
+    <color name="white">#ffffff</color>
+    <color name="list_item_odd">#80878787</color>
+    <color name="blue">#0039a6</color>
+    <color name="green">#00c721</color>
+    <color name="yellow_dark">#242c37</color>
+    <color name="indicator_color">#ffffff</color>
+    <color name="underline_color">#ffffff</color>
+    <color name="divider_color">#2d3540</color>
+    <!--Reskin 24/12/2016-->
+    <color name="background_tab">#0039a6</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#727272</color>
+    <color name="line_divider">#cccccc</color>
+    <color name="background_spiner">#e1e1e1</color>
+    <color name="background_lable_live">#00c721</color>
+    <color name="tranparent">#00000000</color>
+    <color name="bright_blue">#0039A6</color>
+
+    <!--Reskin-->
+    <color name="icons">#212121</color>
+    <color name="divider">#afb6b6b6</color>
+    <color name="tab_indicator_color">#de0c15</color>
+    <color name="app_background">#f4f4f4</color>
+    <color name="text_color_holo_dark">#ffffff</color>
+    <color name="text_color_blue">#2196f3</color>
+
+    <color name="green_custom">#00c721</color>
+    <color name="red_custom">#de0c15</color>
+    <color name="text_color_green_item_match">#00c721</color>
+    <color name="view1">#8CB6B6B6</color>
+    <color name="view2">#4DB6B6B6</color>
+    <color name="main_color">#e9e9e9</color>
+    <color name="background_gay">#e8e8e8</color>
+
+</resources>

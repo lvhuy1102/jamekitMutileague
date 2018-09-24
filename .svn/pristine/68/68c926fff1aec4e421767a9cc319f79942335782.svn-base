@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fr_lineups"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_tabs"
+        android:background="@color/background_spiner"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_horizontal">
+
+        <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+            android:id="@+id/lbl_lineup_homename"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:gravity="center_horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_largex" />
+
+        <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+            android:id="@+id/lbl_lineup_awayname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:gravity="center_horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_largex" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/margin_horizontal"
+        android:layout_marginRight="@dimen/margin_horizontal"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/blue"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lv_firstteam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tranparent"
+        android:divider="@color/tranparent"
+        android:dividerHeight="0dp"
+        android:paddingTop="@dimen/span8" />
+
+    <TextView
+        android:id="@+id/lbl_lineup_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_vertical_xlarge"
+        android:text="@string/no_data"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone" />
+
+</LinearLayout>

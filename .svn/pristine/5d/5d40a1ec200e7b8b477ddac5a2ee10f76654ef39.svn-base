@@ -1,0 +1,124 @@
+package com.hcpt.multileagues.objects;
+
+public class LeagueObj {
+
+    public static final String CL_ID = "6";
+
+    public static final String DASHBOARD = "0";
+    public static final String SINGLE_LEAGUE = "1";
+
+    private String mId, mName, mNameChinese, mNameGerman, mNameSpanish, mNameFrench, mNameItalian, mLogo, mType;
+    private String demo;
+
+    public LeagueObj(String mId, String mName, String mNameChinese, String mNameGerman,
+                     String mNameSpanish, String mNameFrench, String mNameItalian, String mLogo, String mType) {
+        this.mId = mId;
+        this.mName = mName;
+        this.mNameChinese = mNameChinese;
+        this.mNameGerman = mNameGerman;
+        this.mNameSpanish = mNameSpanish;
+        this.mNameFrench = mNameFrench;
+        this.mNameItalian = mNameItalian;
+        this.mLogo = mLogo;
+        this.mType = mType;
+    }
+
+    public LeagueObj(String mId, String mName, String mNameChinese, String mNameGerman,
+                     String mNameSpanish, String mNameFrench, String mNameItalian, String mLogo, String mType, String demo) {
+        this.mId = mId;
+        this.mName = mName;
+        this.mNameChinese = mNameChinese;
+        this.mNameGerman = mNameGerman;
+        this.mNameSpanish = mNameSpanish;
+        this.mNameFrench = mNameFrench;
+        this.mNameItalian = mNameItalian;
+        this.mLogo = mLogo;
+        this.mType = mType;
+        this.demo = demo;
+    }
+
+    public String getDemo() {
+        return demo;
+    }
+
+    public void setDemo(String demo) {
+        this.demo = demo;
+    }
+
+    public String getmId() {
+        return mId;
+    }
+
+    public void setmId(String mId) {
+        this.mId = mId;
+    }
+
+    public String getmName() {
+        return mName;
+    }
+
+    public void setmName(String mName) {
+        this.mName = mName;
+    }
+
+    public String getmNameChinese() {
+        return mNameChinese;
+    }
+
+    public void setmNameChinese(String mNameChinese) {
+        this.mNameChinese = mNameChinese;
+    }
+
+    public String getmNameGerman() {
+        return mNameGerman;
+    }
+
+    public void setmNameGerman(String mNameGerman) {
+        this.mNameGerman = mNameGerman;
+    }
+
+    public String getmNameSpanish() {
+        return mNameSpanish;
+    }
+
+    public void setmNameSpanish(String mNameSpanish) {
+        this.mNameSpanish = mNameSpanish;
+    }
+
+    public String getmNameFrench() {
+        return mNameFrench;
+    }
+
+    public void setmNameFrench(String mNameFrench) {
+        this.mNameFrench = mNameFrench;
+    }
+
+    public String getmNameItalian() {
+        return mNameItalian;
+    }
+
+    public void setmNameItalian(String mNameItalian) {
+        this.mNameItalian = mNameItalian;
+    }
+
+    public String getmLogo() {
+        return mLogo;
+    }
+
+    public void setmLogo(String mLogo) {
+        this.mLogo = mLogo;
+    }
+
+    public String getmType() {
+        return mType;
+    }
+
+    public void setmType(String mType) {
+        this.mType = mType;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+}

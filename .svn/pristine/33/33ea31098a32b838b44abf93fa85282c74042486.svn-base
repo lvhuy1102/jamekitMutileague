@@ -1,0 +1,114 @@
+package com.hcpt.multileagues.adapters;
+
+import android.app.Activity;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.hcpt.multileagues.R;
+import com.hcpt.multileagues.image.utils.ImageLoader;
+import com.hcpt.multileagues.objects.LeagueObj;
+
+import java.util.ArrayList;
+
+public class LeagueDrawerAdapter extends BaseAdapter {
+
+    private Activity mActivity;
+    private LayoutInflater mInflater;
+    private ImageLoader mImgLoader;
+    private ArrayList<LeagueObj> mArrLeague;
+    private int mPosition;
+
+    public LeagueDrawerAdapter(Activity activity, ArrayList<LeagueObj> arrLeague) {
+        this.mArrLeague = arrLeague;
+        mInflater = (LayoutInflater) activity
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.mImgLoader = new ImageLoader(activity);
+        this.mActivity = activity;
+    }
+
+    @Override
+    public int getCount() {
+        // TODO Auto-generated method stub
+        try {
+            return mArrLeague.size();
+        } catch (NullPointerException ex) {
+            return 0;
+        }
+    }
+
+    @Override
+    public Object getItem(int position) {
+        // TODO Auto-generated method stub
+        return mArrLeague.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        Holder holder = null;
+        if (convertView == null) {
+            holder = new Holder();
+            convertView = mInflater.inflate(R.layout.item_drawer_league, null);
+            holder.logoLeague = (ImageView) convertView
+                    .findViewById(R.id.logo_league);
+            holder.lblName = (TextView) convertView
+                    .findViewById(R.id.lbl_league);
+            holder.lblName.setSelected(true);
+            holder.separateBar = convertView.findViewById(R.id.vw_separate);
+
+            convertView.setTag(holder);
+        } else {
+            holder = (Holder) convertView.getTag();
+        }
+
+        LeagueObj league = mArrLeague.get(position);
+        if (league != null) {
+            if (position == 0){
+                holder.lblName.setText(mActivity.getString(R.string.home));
+            }else {
+                holder.lblName.setText(league.getmName());
+            }
+
+
+            if (!league.getmLogo().equals("")) {
+               Glide.with(mActivity).load(league.getmLogo()).into(holder.logoLeague);
+            } else {
+                holder.logoLeague.setImageResource(R.drawable.ic_close_matches);
+            }
+
+            // Show/hide separate bar
+            if (position == (mArrLeague.size() - 1)) {
+                holder.separateBar.setVisibility(View.GONE);
+            } else {
+                holder.separateBar.setVisibility(View.VISIBLE);
+            }
+        }
+
+        return convertView;
+    }
+
+    class Holder {
+        ImageView logoLeague;
+        TextView lblName;
+        View separateBar;
+    }
+
+    public int getmPosition() {
+        return mPosition;
+    }
+
+    public void setmPosition(int mPosition) {
+        this.mPosition = mPosition;
+    }
+}

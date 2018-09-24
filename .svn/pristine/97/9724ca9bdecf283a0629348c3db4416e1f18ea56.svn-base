@@ -1,0 +1,104 @@
+package com.hcpt.multileagues.network;
+
+import android.content.Context;
+
+import com.hcpt.multileagues.configs.GlobalValue;
+import com.hcpt.multileagues.utilities.PacketUtility;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * ParameterFactory class builds parameters for web service apis
+ */
+public final class ParameterFactory {
+
+    private static String KEY_CLUB_ID = "clubId";
+    private static String KEY_ROUND_ID = "roundId";
+    private static String KEY_MATCH_ID = "id";
+    private static String KEY_GCM_ID = "gcm_id";
+    private static String KEY_IMEI_ID = "ime";
+    private static String KEY_DEVICE_TYPE = "type";
+    private static String KEY_MANUAL_NOTIFICATION = "status";
+
+    private static String KEY_LEAGUE_ID = "leagueId";
+
+    private static String KEY_DATE = "date";
+    private static String KEY_DEFAULT = "default";
+
+    public static Map<String, String> createClubIdParams(String clubId) {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put(KEY_CLUB_ID, clubId);
+        parameters.put(KEY_LEAGUE_ID, GlobalValue.leagueId);
+        return parameters;
+    }
+
+    public static Map<String, String> createRoundIdParams(String roundId) {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put(KEY_ROUND_ID, roundId);
+        parameters.put(KEY_LEAGUE_ID, GlobalValue.leagueId);
+        return parameters;
+    }
+
+    public static Map<String, String> createClubandRoundIdParams(String clubId, String roundId) {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put(KEY_CLUB_ID, clubId);
+        parameters.put(KEY_ROUND_ID, roundId);
+        parameters.put(KEY_LEAGUE_ID, GlobalValue.leagueId);
+        return parameters;
+    }
+
+    public static Map<String, String> createMatchIdParams(String matchId) {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put(KEY_MATCH_ID, matchId);
+        return parameters;
+    }
+
+    public static Map<String, String> createGCMIdParams(Context context,
+                                                        String registerId) {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put(KEY_GCM_ID, registerId);
+        parameters.put(KEY_IMEI_ID, PacketUtility.getImei(context));
+        parameters.put(KEY_DEVICE_TYPE, "1");
+        parameters.put(KEY_MANUAL_NOTIFICATION, "1");
+        return parameters;
+    }
+
+    public static Map<String, String> createNotificationParams(Context context,
+                                                               String getNotification, String clubsId) {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put(KEY_IMEI_ID, PacketUtility.getImei(context));
+        parameters.put(KEY_MANUAL_NOTIFICATION, getNotification);
+        parameters.put(KEY_CLUB_ID, clubsId);
+        return parameters;
+    }
+
+    public static Map<String, String> createLeagueIdParams() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put(KEY_LEAGUE_ID, GlobalValue.leagueId);
+        return parameters;
+    }
+
+    public static Map<String, String> createDashboardParams(String date, String strDefault) {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put(KEY_DATE, date);
+        parameters.put(KEY_DEFAULT, strDefault);
+        return parameters;
+    }
+
+    public static Map<String, String> createGetSettingsParam(Context context) {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put(KEY_IMEI_ID, PacketUtility.getImei(context));
+        parameters.put(KEY_LEAGUE_ID, GlobalValue.leagueId);
+        return parameters;
+    }
+
+    public static Map<String, String> createUpdateSettingsParam(Context context, String status, String clubId) {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put(KEY_IMEI_ID, PacketUtility.getImei(context));
+        parameters.put(KEY_MANUAL_NOTIFICATION, status);
+        parameters.put(KEY_CLUB_ID, clubId);
+        parameters.put(KEY_LEAGUE_ID, GlobalValue.leagueId);
+        return parameters;
+    }
+}

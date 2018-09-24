@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingRight="@dimen/padding_vertical"
+    android:paddingLeft="@dimen/padding_vertical"
+    android:paddingBottom="@dimen/padding_vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.hcpt.multileagues.widget.textview.TextViewOpenSansSemibold
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SON HOANG"
+            android:textColor="@color/black" />
+
+        <com.hcpt.multileagues.widget.textview.TextViewOpenSansLightItalic
+            android:id="@+id/tvDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_small"
+            android:text="2017-07-07 16:40"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <com.hcpt.multileagues.widget.textview.TextViewOpenSansSemibold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" : "
+            android:textColor="@color/textColorPrimary" />
+    </LinearLayout>
+
+    <com.hcpt.multileagues.widget.textview.TextViewOpenSansRegular
+        android:id="@+id/tvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="THIS IS A TEST MESSAGE"
+        android:textColor="@color/textColorPrimary" />
+
+</LinearLayout>

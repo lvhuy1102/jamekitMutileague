@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/liner"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/background_main"
+    android:paddingTop="@dimen/span5"
+    android:paddingBottom="@dimen/span5"
+    android:paddingLeft="@dimen/padding_18"
+    android:paddingRight="@dimen/padding_18">
+
+    <TextView
+        android:id="@+id/lbl_player_number_firstteam_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="10"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone" />
+
+    <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+        android:id="@+id/lbl_player_name_firstteam_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:ellipsize="end"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="aaaaaaaaaaaaaaa"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/text_size_lineup" />
+
+    <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+        android:id="@+id/lbl_player_pos_firstteam_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="right"
+        android:paddingRight="16dp"
+        android:text="(GK)"
+        android:textAllCaps="true"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/text_size_lineup" />
+
+    <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+        android:id="@+id/lbl_player_pos_firstteam_away"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="left"
+        android:paddingLeft="16dp"
+        android:text="(GK)"
+        android:textAllCaps="true"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/text_size_lineup" />
+
+    <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+        android:id="@+id/lbl_player_name_firstteam_away"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:ellipsize="end"
+        android:gravity="right"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="bbbbbbbbb"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/text_size_lineup" />
+
+    <TextView
+        android:id="@+id/lbl_player_number_firstteam_away"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="1"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone" />
+
+</LinearLayout>

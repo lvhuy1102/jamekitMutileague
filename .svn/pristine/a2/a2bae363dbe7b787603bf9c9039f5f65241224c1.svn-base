@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "251236486634",
+    "firebase_url": "https://multileagues-7c7c1.firebaseio.com",
+    "project_id": "multileagues-7c7c1",
+    "storage_bucket": "multileagues-7c7c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251236486634:android:256a260bd760eaa8",
+        "android_client_info": {
+          "package_name": "com.hcpt.multileagues"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251236486634-7aeiqahtou55dbqjrl4tkr6h59f25t4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoSlI6jm1zUozKFetjyaHMMDLL4qgOYZ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251236486634:android:906ee4bf17d768be",
+        "android_client_info": {
+          "package_name": "com.hcpt.worldcup2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251236486634-7aeiqahtou55dbqjrl4tkr6h59f25t4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoSlI6jm1zUozKFetjyaHMMDLL4qgOYZ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

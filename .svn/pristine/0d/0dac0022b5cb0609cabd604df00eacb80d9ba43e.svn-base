@@ -1,0 +1,627 @@
+package com.hcpt.multileagues.fragments;
+
+import android.app.AlarmManager;
+import android.app.DatePickerDialog;
+import android.app.DatePickerDialog.OnDateSetListener;
+import android.app.Dialog;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.res.AssetFileDescriptor;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.os.Vibrator;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.hcpt.multileagues.R;
+import com.hcpt.multileagues.activities.MainActivity;
+import com.hcpt.multileagues.activities.MatchDetailActivity;
+import com.hcpt.multileagues.activities.MatchDetailNotPlayed;
+import com.hcpt.multileagues.activities.MatchDetailNotPlayedActivity;
+import com.hcpt.multileagues.adapters.StickyDashboardAdapter;
+import com.hcpt.multileagues.configs.Constants;
+import com.hcpt.multileagues.configs.GlobalValue;
+import com.hcpt.multileagues.configs.JsonConfigs;
+import com.hcpt.multileagues.configs.WebservicesConfigs;
+import com.hcpt.multileagues.database.DatabaseUtility;
+import com.hcpt.multileagues.interfaces.OnNotificationButtonClickListener;
+import com.hcpt.multileagues.json.utils.ParserUtils;
+import com.hcpt.multileagues.modelmanager.ModelManager;
+import com.hcpt.multileagues.modelmanager.ModelManagerListener;
+import com.hcpt.multileagues.network.NetworkUtility;
+import com.hcpt.multileagues.objects.APIObj;
+import com.hcpt.multileagues.objects.AlarmMatch;
+import com.hcpt.multileagues.objects.MatchObj;
+import com.hcpt.multileagues.services.AlarmMatchService;
+import com.hcpt.multileagues.sticky.StickyListHeadersListView;
+import com.hcpt.multileagues.utilities.DateTimeUtility;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Random;
+
+public class DashboardFragment extends Fragment {
+
+    private static final String TAG = DashboardFragment.class.getSimpleName();
+
+    private View view;
+    // private DashboardAdapter mMatchsAdapter;
+    // private ListView mLvMatchs;
+    private ArrayList<MatchObj> mArrMatch;
+    private String mDateTimeStamp = "";
+    private Calendar mCal;
+
+    private static MatchObj mMatchObj;
+
+    private TextView mLblNoData;
+
+    // Declare sticky list header
+    private StickyListHeadersListView mStickyList;
+    private StickyDashboardAdapter mStickyAdapter;
+    private BroadcastReceiver broadcastReceiver;
+    private IntentFilter filter;
+
+    private MediaPlayer mMediaPlayer;
+    private boolean mCheckMedia = true;
+    private Long serverUptimeSeconds;
+
+    // Checking just open app.
+    // private static boolean justOpen = true;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Allow display option menu in this fragment.
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+
+        view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+
+        mCal = Calendar.getInstance();
+
+        initUI();
+        initData("1");
+        mListener();
+
+        return view;
+    }
+
+    private void mListener() {
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if (intent.getAction().equals(Constants.REFRESH)) {
+                    mStickyAdapter.notifyDataSetChanged();
+                }
+            }
+        };
+        filter = new IntentFilter();
+        filter.addAction(Constants.REFRESH);
+        getActivity().registerReceiver(broadcastReceiver, filter);
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        // TODO Auto-generated method stub
+        super.onPrepareOptionsMenu(menu);
+
+        // Show filter menu.
+        MenuItem item = menu.findItem(R.id.action_filter);
+        item.setVisible(true);
+        menu.findItem(R.id.action_save).setVisible(false);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        menu.clear();
+        inflater.inflate(R.menu.menu_main, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+
+        int id = item.getItemId();
+        if (id == R.id.action_refresh) {
+            initData("0");
+        } else if (id == R.id.action_filter) {
+            showDatePicker();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void initUI() {
+        mStickyList = (StickyListHeadersListView) view
+                .findViewById(R.id.lv_matchs);
+        mLblNoData = (TextView) view.findViewById(R.id.lbl_no_data);
+
+        // Should call this method by the end of declaring UI.
+        initControls();
+    }
+
+    // Init widget controls.
+    private void initControls() {
+        mStickyList.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                // Get match which is selected.
+                mMatchObj = mArrMatch.get(position);
+
+                //test
+                // MatchDetailActivity.matchId = mMatchObj.getmMatchId();
+                MatchDetailActivity.currentMatch = mMatchObj;
+                MatchDetailNotPlayed.currentMatch = mMatchObj;
+
+                // Check status to set screen.
+//                if (mMatchObj.getmMatchStatus().equals(JsonConfigs.MATCH_STATUS_NOT_STARTED)) {
+//                startActivity(new Intent(getActivity(), MatchDetailNotPlayed.class));
+//                } else {
+                startActivity(new Intent(getActivity(), MatchDetailActivity.class));
+//                }
+            }
+        });
+    }
+
+    private void initData(String strDefault) {
+        // Get today if has not filtered.
+        if (mDateTimeStamp.equals("")) {
+            mDateTimeStamp = DateTimeUtility
+                    .convertTimeStampToStartOfDate(Calendar.getInstance()
+                            .getTimeInMillis() + "");
+        }
+
+        if (NetworkUtility.getInstance(getActivity()).isNetworkAvailable()) {
+            getDashboardFromApi(strDefault);
+        } else {
+            getDashboardFromDB();
+        }
+    }
+
+    private void getDashboardFromDB() {
+        final String strDate = DateTimeUtility.convertTimeStampToDate(
+                mDateTimeStamp, "yyyyMMdd");
+        APIObj apiInfos = DatabaseUtility.getResuftFromApi(getActivity(),
+                (WebservicesConfigs.URL_GET_DASHBOARD + strDate));
+        if (apiInfos != null) {
+            String json = apiInfos.getmResult();
+
+            mArrMatch = ParserUtils.parserDashboard(json);
+
+            if (mArrMatch.size() > 0) {
+                // Hide no data view
+                mLblNoData.setVisibility(View.GONE);
+                // Show list view.
+                mStickyList.setVisibility(View.VISIBLE);
+
+                mStickyAdapter = new StickyDashboardAdapter(getActivity(),
+                        mArrMatch);
+                mStickyList.setAdapter(mStickyAdapter);
+                mStickyAdapter.setOnNotificationButtonClickListener(new OnNotificationButtonClickListener() {
+                    @Override
+                    public void onNotificationButtonClick(MatchObj matchObj) {
+                        mMatchObj = matchObj;
+                        MatchDetailActivity.currentMatch = mMatchObj;
+                        MatchDetailNotPlayed.currentMatch = mMatchObj;
+                        showDialogAlarm(matchObj.getmTime(), "", matchObj);
+                    }
+                });
+            } else {
+                // Show no data view
+                mLblNoData.setVisibility(View.VISIBLE);
+                // Hide list view.
+                mStickyList.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    private void getDashboardFromApi(String strDefault) {
+        ModelManager.getDashboard(getActivity(), mDateTimeStamp, strDefault,
+                true, new ModelManagerListener() {
+
+                    @Override
+                    public void onSuccess(Object object) {
+                        String json = (String) object;
+
+                        Log.e(TAG, json);
+
+                        mArrMatch = ParserUtils.parserDashboard(json);
+
+                        if (mArrMatch.size() > 0) {
+                            // Hide no data view
+                            mLblNoData.setVisibility(View.GONE);
+                            // Show list view.
+                            mStickyList.setVisibility(View.VISIBLE);
+
+                            mStickyAdapter = new StickyDashboardAdapter(
+                                    getActivity(), mArrMatch);
+                            mStickyList.setAdapter(mStickyAdapter);
+                            mStickyAdapter.setOnNotificationButtonClickListener(new OnNotificationButtonClickListener() {
+                                @Override
+                                public void onNotificationButtonClick(MatchObj matchObj) {
+                                    mMatchObj = matchObj;
+                                    MatchDetailActivity.currentMatch = mMatchObj;
+                                    MatchDetailNotPlayed.currentMatch = mMatchObj;
+                                    showDialogAlarm(matchObj.getmTime(), "", matchObj);
+                                }
+                            });
+                            ((MainActivity) getActivity()).setTitleByLeague(0, "");
+                        } else {
+                            // Show no data view
+                            mLblNoData.setVisibility(View.VISIBLE);
+                            // Hide list view.
+                            mStickyList.setVisibility(View.GONE);
+                        }
+                    }
+
+                    @Override
+                    public void onError() {
+                        // TODO Auto-generated method stub
+                        Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void showDatePicker() {
+        OnDateSetListener callBack = new OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                if (view.isShown()) {
+                    mCal.set(year, monthOfYear, dayOfMonth);
+
+                    mDateTimeStamp = DateTimeUtility
+                            .convertTimeStampToStartOfDate(mCal
+                                    .getTimeInMillis() + "");
+                    initData("0");
+                }
+            }
+
+        };
+
+        DatePickerDialog datePicker = new DatePickerDialog(getActivity(),
+                callBack, mCal.get(Calendar.YEAR), mCal.get(Calendar.MONTH),
+                mCal.get(Calendar.DATE));
+        datePicker.show();
+    }
+
+    //=======================================================
+    //================================================
+    private void showDialogAlarm(final String times, final String titleReminder, final MatchObj mMatchObj) {
+        final Dialog dialog = new Dialog(getActivity());
+        dialog.setTitle(DateTimeUtility.convertTimeStampToDate(mMatchObj.getmTime(), "HH:mm EEE, yyyy-MM-dd"));
+        dialog.setContentView(R.layout.dialog_settings_reminder);
+
+        final Vibrator vibrate = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+        vibrate.vibrate(GlobalValue.vibrateOnReminder * 1000);
+        mMediaPlayer = new MediaPlayer();
+
+        if (!mMediaPlayer.isPlaying()) {
+            try {
+                AssetFileDescriptor descriptor = getActivity().getAssets().openFd("alarm.mp3");
+                mMediaPlayer.setDataSource(descriptor.getFileDescriptor(),
+                        descriptor.getStartOffset(), descriptor.getLength());
+                descriptor.close();
+                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+                mMediaPlayer.setLooping(true);
+                mMediaPlayer.prepare();
+                mMediaPlayer.setVolume(0, 0);
+                mMediaPlayer.start();
+                mCheckMedia = true;
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            } catch (IllegalStateException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // Init dialog's controls.
+        Button btnOk = (Button) dialog.findViewById(R.id.btn_reminder_ok);
+        final Button btnCancel = (Button) dialog
+                .findViewById(R.id.btn_reminder_cancel);
+        final CheckBox chkBefore15 = (CheckBox) dialog
+                .findViewById(R.id.chk_reminder_15);
+        final CheckBox chkBefore30 = (CheckBox) dialog
+                .findViewById(R.id.chk_reminder_30);
+        final CheckBox chkBefore60 = (CheckBox) dialog
+                .findViewById(R.id.chk_reminder_60);
+        final CheckBox chkOnTime = (CheckBox) dialog
+                .findViewById(R.id.chk_reminder_on_time);
+
+//        // Display Cancel button.
+//        if (checkReminder.getIntValue("check15" + MatchDetailNotPlayed.currentMatch.getmMatchId()) == Integer
+//                .valueOf(MatchDetailNotPlayed.currentMatch.getmMatchId())) {
+//            chkBefore15.setChecked(true);
+//            btnCancel.setVisibility(View.VISIBLE);
+//        }
+//        if (checkReminder.getIntValue("check30" + MatchDetailNotPlayed.currentMatch.getmMatchId()) == Integer
+//                .valueOf(MatchDetailNotPlayed.currentMatch.getmMatchId())) {
+//            chkBefore30.setChecked(true);
+//            btnCancel.setVisibility(View.VISIBLE);
+//        }
+//        if (checkReminder.getIntValue("check60" + MatchDetailNotPlayed.currentMatch.getmMatchId()) == Integer
+//                .valueOf(MatchDetailNotPlayed.currentMatch.getmMatchId())) {
+//            chkBefore60.setChecked(true);
+//            btnCancel.setVisibility(View.VISIBLE);
+//        }
+//        if (checkReminder.getIntValue("checkOntime" + MatchDetailNotPlayed.currentMatch.getmMatchId()) == Integer
+//                .valueOf(MatchDetailNotPlayed.currentMatch.getmMatchId())) {
+//            chkOnTime.setChecked(true);
+//            btnCancel.setVisibility(View.VISIBLE);
+//        }
+
+        chkBefore15
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView,
+                                                 boolean isChecked) {
+
+                        checkAlarm(btnCancel, "check15", "15 is exist already",
+                                times, 15, vibrate,
+                                "The match will be started after 15 mins",
+                                chkBefore15, chkBefore30, chkBefore60,
+                                chkOnTime);
+                    }
+                });
+
+        chkBefore30
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView,
+                                                 boolean isChecked) {
+
+                        checkAlarm(btnCancel, "check30", "30 is exist already",
+                                times, 30, vibrate,
+                                "The match will be started after 30 mins",
+                                chkBefore30, chkBefore15, chkBefore60,
+                                chkOnTime);
+
+                    }
+                });
+
+        chkBefore60
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView,
+                                                 boolean isChecked) {
+
+                        checkAlarm(btnCancel, "check60", "60 is exist already",
+                                times, 60, vibrate,
+                                "The match will be started after 60 mins",
+                                chkBefore60, chkBefore30, chkBefore15,
+                                chkOnTime);
+                    }
+                });
+
+        chkOnTime
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView,
+                                                 boolean isChecked) {
+
+                        checkAlarm(btnCancel, "checkOntime",
+                                "On time is exist already", times, 0, vibrate,
+                                "The match is started", chkOnTime, chkBefore30,
+                                chkBefore60, chkBefore15);
+
+                    }
+                });
+        DatabaseUtility databaseUtility = new DatabaseUtility();
+        if (databaseUtility.checkAlarmSetted(mMatchObj.getmMatchId(), getActivity())) {
+            AlarmMatch alarmMatchPrevious = databaseUtility.getAlarmMatchById(mMatchObj.getmMatchId(), getActivity()).get(0);
+            chkOnTime.setChecked(alarmMatchPrevious.isOnTime());
+            chkBefore15.setChecked(alarmMatchPrevious.isBefore15Min());
+            chkBefore60.setChecked(alarmMatchPrevious.isBefore60Min());
+            chkBefore30.setChecked(alarmMatchPrevious.isBefore30Min());
+            if (alarmMatchPrevious.isOnTime() || alarmMatchPrevious.isBefore15Min() || alarmMatchPrevious.isBefore30Min() || alarmMatchPrevious.isBefore60Min()) {
+                btnCancel.setVisibility(View.VISIBLE);
+            }
+        }
+
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+            @SuppressWarnings("deprecation")
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                if (mCheckMedia == true) {
+                    mMediaPlayer.stop();
+                    mMediaPlayer.release();
+                    mMediaPlayer = null;
+                    vibrate.cancel();
+                    System.runFinalizersOnExit(true);
+                    mCheckMedia = false;
+                }
+            }
+        });
+
+        btnOk.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                AlarmMatch item = new AlarmMatch();
+                item.setTime(mMatchObj.getmTime());
+                item.setMatchId(mMatchObj.getmMatchId());
+                item.setMatchTitle(mMatchObj.getmHomeName() + " - " + mMatchObj.getmAwayName());
+                item.setOnTime(chkOnTime.isChecked());
+                item.setBefore15Min(chkBefore15.isChecked());
+                item.setBefore30Min(chkBefore30.isChecked());
+                item.setBefore60Min(chkBefore60.isChecked());
+                if (chkOnTime.isChecked() || chkBefore15.isChecked() || chkBefore30.isChecked() || chkBefore60.isChecked()) {
+                    saveSettingToDatabase(item);
+                } else {
+                    // remove from database
+                    removeSettingFromDatabase(mMatchObj.getmMatchId());
+                }
+
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    @SuppressWarnings("deprecation")
+    private void checkAlarm(final Button cancel, String strValue,
+                            String strExist, String matchTime, int typeReminder,
+                            Vibrator vibrate, String strStarted, final CheckBox chkChecked,
+                            final CheckBox chk1, final CheckBox chk2, final CheckBox chk3) {
+        if (chkChecked.isChecked()) {
+//            if (checkReminder.getIntValue(strValue + MatchDetailNotPlayed.currentMatch.getmMatchId()) == Integer
+//                    .valueOf(MatchDetailNotPlayed.currentMatch.getmMatchId())) {
+//
+//                Toast.makeText(getActivity(), strExist, Toast.LENGTH_LONG).show();
+//            } else {
+            SimpleDateFormat formattera = new SimpleDateFormat(
+                    "yyyy-MM-dd HH:mm", Locale.getDefault());
+            Date oldDate;
+            try {
+                oldDate = formattera.parse(matchTime);
+                long time60 = oldDate.getTime()
+                        - (typeReminder * 60 * 1000);
+                serverUptimeSeconds = ((time60 - System.currentTimeMillis()) / 1000);
+                if (serverUptimeSeconds <= 0) {
+                    Toast.makeText(getActivity(),
+                            "Elapsed time, you can not reminder",
+                            Toast.LENGTH_LONG).show();
+                    chkChecked.setChecked(false);
+                    if (mCheckMedia == true) {
+                        mMediaPlayer.stop();
+                        mMediaPlayer.release();
+                        mMediaPlayer = null;
+                        vibrate.cancel();
+                        System.runFinalizersOnExit(true);
+                        mCheckMedia = false;
+                    }
+
+                } else {
+                    // Show cancel button.
+                    cancel.setVisibility(View.VISIBLE);
+
+//                        checkReminder.putIntValue(
+//                                strValue + MatchDetailNotPlayed.currentMatch.getmMatchId(),
+//                                Integer.valueOf(MatchDetailNotPlayed.currentMatch.getmMatchId()));
+                    // dialog.dismiss();
+                    long abc = oldDate.getTime()
+                            - (typeReminder * 60 * 1000);
+                    String timeReminder60Min = strStarted;
+                    setAlarm(abc, timeReminder60Min, MatchDetailNotPlayed.currentMatch.getmMatchId()
+                            + "", strValue);
+                    if (mCheckMedia == true) {
+                        mMediaPlayer.stop();
+                        mMediaPlayer.release();
+                        mMediaPlayer = null;
+                        vibrate.cancel();
+                        System.runFinalizersOnExit(true);
+                        mCheckMedia = false;
+                    }
+                }
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            Log.e(TAG, serverUptimeSeconds + "");
+//            }
+        } else {
+//            if (checkReminder.getIntValue(strValue + MatchDetailNotPlayed.currentMatch.getmMatchId()) == Integer
+//                    .valueOf(MatchDetailNotPlayed.currentMatch.getmMatchId())) {
+//                checkReminder.putIntValue(strValue + MatchDetailNotPlayed.currentMatch.getmMatchId(), 0);
+//            }
+
+            // Hide cancel button when have no any checkbox is checked.
+            if (!chk1.isChecked() && !chk2.isChecked() && !chk3.isChecked()) {
+                cancel.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    private void setAlarm(long abc, String title, String mathId, String type) {
+        PendingIntent pendingIntent;
+        Random r = new Random();
+        Intent intent = new Intent(getActivity(), AlarmMatchService.class);
+        Bundle b = new Bundle();
+        b.putString("titleReminder", title);
+        b.putString("matchId", mathId);
+        b.putString("type", type);
+        intent.putExtras(b);
+        pendingIntent = PendingIntent
+                .getBroadcast(getActivity(), r.nextInt(), intent, 0);
+        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, abc, pendingIntent);
+    }
+
+    private void saveSettingToDatabase(AlarmMatch alarmMatch) {
+        DatabaseUtility databaseUtility = new DatabaseUtility();
+        databaseUtility.insertAlarmMatch(alarmMatch, getActivity());
+        requestRefreshData();
+//        mCallBack.changeDatabaseListener();
+
+
+    }
+
+    private void removeSettingFromDatabase(String matchId) {
+        DatabaseUtility databaseUtility = new DatabaseUtility();
+        databaseUtility.deleteAlarmMatch(matchId, getActivity());
+        requestRefreshData();
+//        mCallBack.changeDatabaseListener();
+    }
+
+    void requestRefreshData() {
+        Intent intent = new Intent();
+        intent.setAction(Constants.REFRESH);
+        getActivity().sendBroadcast(intent);
+    }
+}

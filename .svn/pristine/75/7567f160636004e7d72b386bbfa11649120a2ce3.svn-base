@@ -1,0 +1,638 @@
+package com.hcpt.multileagues.fragments;
+
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.hcpt.multileagues.R;
+import com.hcpt.multileagues.activities.AboutUsActivity;
+import com.hcpt.multileagues.activities.MainActivity;
+import com.hcpt.multileagues.adapters.FavTeamAdapter;
+import com.hcpt.multileagues.configs.Args;
+import com.hcpt.multileagues.configs.Constants;
+import com.hcpt.multileagues.configs.FruitySharedPreferences;
+import com.hcpt.multileagues.configs.GlobalFunctions;
+import com.hcpt.multileagues.configs.GlobalValue;
+import com.hcpt.multileagues.configs.WebservicesConfigs;
+import com.hcpt.multileagues.database.DatabaseUtility;
+import com.hcpt.multileagues.json.utils.ParserUtils;
+import com.hcpt.multileagues.modelmanager.ModelManager;
+import com.hcpt.multileagues.modelmanager.ModelManagerListener;
+import com.hcpt.multileagues.network.NetworkUtility;
+import com.hcpt.multileagues.objects.APIObj;
+import com.hcpt.multileagues.objects.FavoriteObj;
+import com.hcpt.multileagues.objects.SettingObj;
+
+import java.util.ArrayList;
+
+public class SettingsFragment extends Fragment {
+
+    private static final String TAG = SettingsFragment.class.getSimpleName();
+
+    private View view;
+
+    private CheckBox mChkAutoRefresh, mChkGetNotification;
+    private SeekBar mSkbar;
+    private LinearLayout mLblChooseFav;
+    private Button mBtnMoreApps, mBtnAboutUs, mBtnLanguage;
+    private ArrayList<FavoriteObj> mArrFavorite;
+    private SettingObj mSettingObj;
+    private String mNotificationStatus;
+    private String mCurrentLang;
+    private LinearLayout layoutNotification;
+    private RecyclerView rcvFavTeam;
+    private FavTeamAdapter favTeamAdapter;
+    private CheckBox chkAll;
+    private TextView tvTime, tvStatus;
+    private LinearLayout layoutTime;
+    private ImageView imageView;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (GlobalValue.prefs == null) {
+            GlobalValue.prefs = new FruitySharedPreferences(getActivity());
+        }
+        setHasOptionsMenu(true);
+        if (GlobalValue.prefs.getStringValue(Args.LANGUAGE).isEmpty()) {
+            GlobalValue.prefs.putStringValue(Args.LANGUAGE, Constants.ENGLISH);
+        }
+        mCurrentLang = GlobalValue.prefs.getStringValue(Args.LANGUAGE);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        view = inflater.inflate(R.layout.fragment_settings, container, false);
+
+        initUI();
+//        initData();
+        setHasOptionsMenu(true);
+        return view;
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        menu.clear();
+        inflater.inflate(R.menu.menu_main, menu);
+        menu.findItem(R.id.action_filter).setVisible(false);
+        menu.findItem(R.id.action_refresh).setVisible(false);
+        menu.findItem(R.id.action_save).setVisible(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_save) {
+            updateSettings();
+            Toast.makeText(getActivity(), getResources().getString(R.string.saved), Toast.LENGTH_SHORT).show();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void initData() {
+        favTeamAdapter = new FavTeamAdapter(getActivity(), mArrFavorite, chkAll);
+        rcvFavTeam.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rcvFavTeam.setHasFixedSize(true);
+        rcvFavTeam.setAdapter(favTeamAdapter);
+
+        chkAll.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    tvStatus.setText(getString(R.string.deselect_all));
+//                    chkAll.setText(getString(R.string.deselect_all));
+                } else {
+//                    chkAll.setText(getString(R.string.text_all));
+                    tvStatus.setText(getString(R.string.text_all));
+                }
+            }
+        });
+
+        chkAll.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (chkAll.isChecked()) {
+                    for (int i = 0; i < mArrFavorite.size(); i++) {
+                        mArrFavorite.get(i).setIsFav(true);
+                    }
+                } else {
+                    for (int i = 0; i < mArrFavorite.size(); i++) {
+                        mArrFavorite.get(i).setIsFav(false);
+                    }
+                }
+
+                favTeamAdapter.notifyDataSetChanged();
+            }
+        });
+
+        boolean isAll = true;
+        for (int i = 0; i < mArrFavorite.size(); i++) {
+            if (!mArrFavorite.get(i).isFav()) {
+                isAll = false;
+                break;
+            }
+        }
+        chkAll.setChecked(isAll);
+
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        // TODO Auto-generated method stub
+        super.onPrepareOptionsMenu(menu);
+
+        // Hide menus.
+        MenuItem item = menu.findItem(R.id.action_filter);
+        item.setVisible(false);
+        item = menu.findItem(R.id.action_refresh);
+        item.setVisible(false);
+    }
+
+    private void initUI() {
+        mSkbar = (SeekBar) view.findViewById(R.id.skbar_minute_refresh);
+        mChkAutoRefresh = (CheckBox) view.findViewById(R.id.chk_auto_refresh);
+        mChkGetNotification = (CheckBox) view.findViewById(R.id.chk_getNotification);
+        mLblChooseFav = (LinearLayout) view.findViewById(R.id.lbl_fav_teams);
+        mBtnMoreApps = (Button) view.findViewById(R.id.btn_more_apps);
+        //mBtnAboutUs = (Button) view.findViewById(R.id.btn_about_us);
+        mBtnLanguage = (Button) view.findViewById(R.id.btn_language);
+
+        layoutNotification = (LinearLayout) view.findViewById(R.id.layout_notification);
+        layoutNotification.setVisibility(View.GONE);
+        rcvFavTeam = (RecyclerView) view.findViewById(R.id.rcl_team);
+        chkAll = (CheckBox) view.findViewById(R.id.chk_all);
+        tvTime = (TextView) view.findViewById(R.id.tv_time);
+        tvStatus = (TextView) view.findViewById(R.id.tv_status);
+        layoutTime = (LinearLayout) view.findViewById(R.id.layou_time);
+        imageView = (ImageView) view.findViewById(R.id.image);
+
+        // Should call this methods at the end of declaring UI
+        initControl();
+        getSettings();
+    }
+
+    private void initControl() {
+        mChkAutoRefresh
+                .setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView,
+                                                 boolean isChecked) {
+                        if (isChecked) {
+                            layoutTime.setVisibility(View.VISIBLE);
+                            mSkbar.setVisibility(View.VISIBLE);
+                            if (GlobalValue.prefs.getIntValue(Args.KEY_UI_PROGRESS_VALUE) == 0) {
+                                GlobalValue.prefs.putIntValue(Args.KEY_UI_PROGRESS_VALUE, 1);
+                            }
+//                            mChkAutoRefresh.setText(String.format(getString(R.string.text_auto_refresh_after_minute),
+//                                    GlobalValue.prefs.getIntValue(Args.KEY_UI_PROGRESS_VALUE)));
+                            tvTime.setText(GlobalValue.prefs.getIntValue(Args.KEY_UI_PROGRESS_VALUE) + " mins");
+                        } else {
+                            layoutTime.setVisibility(View.GONE);
+                            mSkbar.setVisibility(View.GONE);
+                            mChkAutoRefresh.setText(getActivity().getResources().getString(
+                                    R.string.text_auto_refresh));
+
+                        }
+
+                        // Put reference.
+                        GlobalValue.prefs.putBooleanValue(Args.KEY_UI_AUTO_REFRESH, isChecked);
+                    }
+                });
+
+        mSkbar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // Put reference(minute)
+                if (seekBar.getProgress() == 0) {
+                    GlobalValue.prefs.putIntValue(Args.KEY_UI_PROGRESS_VALUE, 1);
+                } else {
+                    GlobalValue.prefs.putIntValue(Args.KEY_UI_PROGRESS_VALUE, seekBar.getProgress());
+                }
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress,
+                                          boolean fromUser) {
+                if (progress == 0) {
+                    progress = progress + 1;
+                }
+//                mChkAutoRefresh.setText(String.format(getString(R.string.text_auto_refresh_after_minute), progress));
+                tvTime.setText(progress + " mins");
+            }
+        });
+
+        // On/off push notification.
+        mChkGetNotification
+                .setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView,
+                                                 boolean isChecked) {
+                        // Show/hide label for choosing favorite teams
+                        if (isChecked) {
+                            mLblChooseFav.setVisibility(View.VISIBLE);
+                            layoutNotification.setVisibility(View.GONE);
+                            // Get notification status
+                            mNotificationStatus = SettingObj.NOTIFICATION_ON;
+                        } else {
+                            mLblChooseFav.setVisibility(View.GONE);
+                            layoutNotification.setVisibility(View.GONE);
+                            // Get notification status
+                            mNotificationStatus = SettingObj.NOTIFICATION_OFF;
+                        }
+                    }
+                });
+        mChkGetNotification.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Update settings
+                updateSettings();
+            }
+        });
+
+        // Show dialog to choose fav.
+        mLblChooseFav.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+//                showFavDialog();
+                if (layoutNotification.getVisibility() == View.GONE) {
+                    layoutNotification.setVisibility(View.VISIBLE);
+                    imageView.setImageResource(R.drawable.ic_drop_up);
+                } else {
+                    layoutNotification.setVisibility(View.GONE);
+                    imageView.setImageResource(R.drawable.ic_drop_down);
+                }
+
+            }
+        });
+
+        // Clicking on About us button
+//        mBtnAboutUs.setOnClickListener(new OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                // Show about us page
+//                startActivity(new Intent(getActivity(), AboutUsActivity.class));
+//                getActivity().overridePendingTransition(R.anim.slide_in_left,
+//                        R.anim.slide_out_left);
+//            }
+//        });
+
+        // Clicking on More apps button
+        mBtnMoreApps.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // Open home page
+                GlobalFunctions.openBrowser(getActivity(), getActivity().getResources().getString(R.string.about_link));
+            }
+        });
+
+        // Change language
+        mBtnLanguage.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLanguageDialog();
+            }
+        });
+    }
+
+    private void showLanguageDialog() {
+        final Dialog dialog = new Dialog(getActivity());
+        dialog.setContentView(R.layout.dialog_language);
+        dialog.setTitle(getString(R.string.text_btn_language));
+
+        RadioButton radEnglish = (RadioButton) dialog.findViewById(R.id.rad_english);
+        RadioButton radChinese = (RadioButton) dialog.findViewById(R.id.rad_chinese);
+        RadioButton radGerman = (RadioButton) dialog.findViewById(R.id.rad_german);
+        RadioButton radSpanish = (RadioButton) dialog.findViewById(R.id.rad_spanish);
+        RadioButton radFrench = (RadioButton) dialog.findViewById(R.id.rad_french);
+        RadioButton radItalian = (RadioButton) dialog.findViewById(R.id.rad_italian);
+        Button btnOk = (Button) dialog.findViewById(R.id.btn_ok);
+
+        // Set checked language
+        if (GlobalValue.prefs.getStringValue(Args.LANGUAGE).equals(Constants.ENGLISH)) {
+            radEnglish.setChecked(true);
+        } else if (GlobalValue.prefs.getStringValue(Args.LANGUAGE).equals(Constants.CHINESE)) {
+            radChinese.setChecked(true);
+        } else if (GlobalValue.prefs.getStringValue(Args.LANGUAGE).equals(Constants.GERMAN)) {
+            radGerman.setChecked(true);
+        } else if (GlobalValue.prefs.getStringValue(Args.LANGUAGE).equals(Constants.SPANISH)) {
+            radSpanish.setChecked(true);
+        } else if (GlobalValue.prefs.getStringValue(Args.LANGUAGE).equals(Constants.FRENCH)) {
+            radFrench.setChecked(true);
+        } else if (GlobalValue.prefs.getStringValue(Args.LANGUAGE).equals(Constants.ITALIAN)) {
+            radItalian.setChecked(true);
+        }
+
+        // Choose languages
+        radEnglish.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    mCurrentLang = Constants.ENGLISH;
+                }
+            }
+        });
+
+        radChinese.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    mCurrentLang = Constants.CHINESE;
+                }
+            }
+        });
+
+        radGerman.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    mCurrentLang = Constants.GERMAN;
+                }
+            }
+        });
+
+        radSpanish.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    mCurrentLang = Constants.SPANISH;
+                }
+            }
+        });
+
+        radFrench.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    mCurrentLang = Constants.FRENCH;
+                }
+            }
+        });
+
+        radItalian.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    mCurrentLang = Constants.ITALIAN;
+                }
+            }
+        });
+
+        btnOk.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Dismiss the dialog
+                dialog.dismiss();
+
+                // Change languages
+                changeLanguage();
+            }
+        });
+
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                if (!mCurrentLang.equals(GlobalValue.prefs.getStringValue(Args.LANGUAGE))) {
+                    // Revert current language var
+                    mCurrentLang = GlobalValue.prefs.getStringValue(Args.LANGUAGE);
+                }
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void changeLanguage() {
+        if (!mCurrentLang.equals(GlobalValue.prefs.getStringValue(Args.LANGUAGE))) {
+            // Save current lang. MUST put lang value before calling change language method
+            GlobalValue.prefs.putStringValue(Args.LANGUAGE, mCurrentLang);
+
+            // Restart app to apply changing language
+            getActivity().finish();
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            getActivity().startActivity(intent);
+        }
+    }
+
+    private void getSettings() {
+        // Get 'auto refresh' setting
+        mChkAutoRefresh.setChecked(GlobalValue.prefs.getBooleanValue(Args.KEY_UI_AUTO_REFRESH));
+        mSkbar.setProgress(GlobalValue.prefs.getIntValue(Args.KEY_UI_PROGRESS_VALUE));
+
+        // Just get user's settings(Notification status and favorite teams) from server for first time
+        if (NetworkUtility.getInstance(getActivity()).isNetworkAvailable()) {
+            getSettingsFromApi();
+        } else {
+            getSettingsFromLocal();
+        }
+    }
+
+    private void getSettingsFromApi() {
+        ModelManager.getSettings(getActivity(), new ModelManagerListener() {
+            @Override
+            public void onError() {
+            }
+
+            @Override
+            public void onSuccess(Object object) {
+                String json = (String) object;
+                parseFavorite(json);
+            }
+        });
+    }
+
+    private void getSettingsFromLocal() {
+        APIObj apiInfos = DatabaseUtility.getResuftFromApi(getActivity(),
+                WebservicesConfigs.URL_GET_SETTINGS + GlobalValue.leagueId);
+        if (apiInfos != null) {
+            String json = apiInfos.getmResult();
+            parseFavorite(json);
+        }
+    }
+
+    private void parseFavorite(final String json) {
+        try {
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if (GlobalValue.arrRankClubs != null) {
+                        if (mArrFavorite == null) {
+                            mArrFavorite = new ArrayList<>();
+                        } else {
+                            mArrFavorite.clear();
+                        }
+                        mSettingObj = ParserUtils.parseSettings(json);
+                        if (mSettingObj != null) {
+                            for (int i = 0; i < GlobalValue.arrRankClubs.size(); i++) {
+                                boolean isFav = false;
+                                if (mSettingObj.getFavTeams() != null) {
+                                    for (int j = 0; j < mSettingObj.getFavTeams().size(); j++) {
+                                        if (mSettingObj.getFavTeams().get(j).equals(GlobalValue.arrRankClubs.get(i).getmId())) {
+                                            isFav = true;
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    isFav = true;
+                                }
+                                mArrFavorite.add(new FavoriteObj(GlobalValue.arrRankClubs.get(i).getmId(),
+                                        GlobalValue.arrRankClubs.get(i).getmNameClubs(), isFav));
+                            }
+
+                            // Check notification is on or off
+                            mChkGetNotification.setChecked(mSettingObj.getStatus().equals(SettingObj.NOTIFICATION_ON));
+                            initData();
+                        }
+                    } else {
+                        handler.postDelayed(this, 1000);
+                    }
+                }
+
+            }, 1000);
+        } catch (NullPointerException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void showFavDialog() {
+        final Dialog dialog = new Dialog(getActivity());
+        dialog.setContentView(R.layout.dialog_favourite_teams);
+        dialog.setTitle(getString(R.string.select_fav_teams));
+
+        final CheckBox chkAll = (CheckBox) dialog.findViewById(R.id.chk_all);
+        RecyclerView rclTeam = (RecyclerView) dialog.findViewById(R.id.rcl_team);
+        rclTeam.setHasFixedSize(true);
+        rclTeam.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        Button btnOk = (Button) dialog.findViewById(R.id.btn_ok);
+
+        final FavTeamAdapter favAdapter = new FavTeamAdapter(getActivity(), mArrFavorite, chkAll);
+        rclTeam.setAdapter(favAdapter);
+
+        // Set text for checkbox 'All'
+        chkAll.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    chkAll.setText(getString(R.string.deselect_all));
+                } else {
+                    chkAll.setText(getString(R.string.text_all));
+                }
+            }
+        });
+
+        chkAll.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (chkAll.isChecked()) {
+                    for (int i = 0; i < mArrFavorite.size(); i++) {
+                        mArrFavorite.get(i).setIsFav(true);
+                    }
+                } else {
+                    for (int i = 0; i < mArrFavorite.size(); i++) {
+                        mArrFavorite.get(i).setIsFav(false);
+                    }
+                }
+
+                favAdapter.notifyDataSetChanged();
+            }
+        });
+
+        boolean isAll = true;
+        for (int i = 0; i < mArrFavorite.size(); i++) {
+            if (!mArrFavorite.get(i).isFav()) {
+                isAll = false;
+                break;
+            }
+        }
+        chkAll.setChecked(isAll);
+
+        btnOk.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Dismiss the dialog
+                dialog.dismiss();
+
+                // Update user's settings
+                updateSettings();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void updateSettings() {
+        if (NetworkUtility.getInstance(getActivity()).isNetworkAvailable()) {
+            // Get favorite teams
+            String clubId = "";
+            int count = 0;
+            for (int i = 0; i < mArrFavorite.size(); i++) {
+                if (mArrFavorite.get(i).isFav()) {
+                    count++;
+                    if (count == 1) {
+                        clubId += mArrFavorite.get(i).getId();
+                    } else {
+                        clubId += "," + mArrFavorite.get(i).getId();
+                    }
+                }
+            }
+
+            ModelManager.updateSettings(getActivity(), mNotificationStatus, clubId, new ModelManagerListener() {
+                @Override
+                public void onError() {
+                }
+
+                @Override
+                public void onSuccess(Object object) {
+                    String json = (String) object;
+                    Log.e(TAG, "Update: " + json);
+                    // TODO
+                    parseFavorite(json);
+                }
+            });
+        } else {
+            Toast.makeText(getActivity(), getString(R.string.no_network), Toast.LENGTH_SHORT).show();
+        }
+    }
+}

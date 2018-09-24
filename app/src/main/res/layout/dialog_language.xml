@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="@dimen/min_width_dialog"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_vertical"
+        android:layout_marginRight="@dimen/margin_vertical"
+        android:layout_marginTop="@dimen/margin_vertical"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rad_english"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_vertical"
+            android:text="@string/english"
+            android:textSize="@dimen/text_size_normal" />
+
+        <RadioButton
+            android:id="@+id/rad_chinese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_vertical"
+            android:text="@string/chinese"
+            android:textSize="@dimen/text_size_normal" />
+
+        <RadioButton
+            android:id="@+id/rad_german"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_vertical"
+            android:text="@string/german"
+            android:textSize="@dimen/text_size_normal" />
+
+        <RadioButton
+            android:id="@+id/rad_spanish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_vertical"
+            android:text="@string/spanish"
+            android:textSize="@dimen/text_size_normal" />
+
+        <RadioButton
+            android:id="@+id/rad_french"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_vertical"
+            android:text="@string/french"
+            android:textSize="@dimen/text_size_normal" />
+
+        <RadioButton
+            android:id="@+id/rad_italian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/italian"
+            android:textSize="@dimen/text_size_normal" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        style="?attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_ok"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_btn_ok"
+            android:textSize="@dimen/text_size_large" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/lblHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_tab"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/padding_horizontal2"
+        android:paddingRight="@dimen/padding_horizontal"
+        android:paddingTop="@dimen/padding_horizontal"
+        android:paddingBottom="@dimen/padding_horizontal"
+        android:layout_marginBottom="@dimen/margin_item"
+        android:singleLine="true"
+        android:text="Header"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_large" />
+
+</LinearLayout>

@@ -1,0 +1,514 @@
+package com.hcpt.multileagues.activities;
+
+import android.app.AlarmManager;
+import android.app.Dialog;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.os.Vibrator;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.hcpt.multileagues.R;
+import com.hcpt.multileagues.configs.FruitySharedPreferences;
+import com.hcpt.multileagues.configs.GlobalFunctions;
+import com.hcpt.multileagues.configs.GlobalValue;
+import com.hcpt.multileagues.database.DatabaseUtility;
+import com.hcpt.multileagues.image.utils.ImageLoader;
+import com.hcpt.multileagues.interfaces.UpdateDatabaseListener;
+import com.hcpt.multileagues.objects.AlarmMatch;
+import com.hcpt.multileagues.objects.MatchObj;
+import com.hcpt.multileagues.services.AlarmMatchService;
+import com.hcpt.multileagues.utilities.DateTimeUtility;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Random;
+
+public class MatchDetailNotPlayedActivity extends ActionBarActivity {
+
+    private static final String TAG = MatchDetailNotPlayedActivity.class.getSimpleName();
+
+    private MatchDetailNotPlayedActivity self;
+
+    public static MatchObj matchObj;
+    private ImageView mLogoHome, mLogoAway;
+    private TextView mLblStatidum, mLblHome, mLblAway, mLblScores,
+            mLblReminderOntime, mLblReminder15, mLblReminder30, mLblReminder60,
+            mLblDate, mLblTime;
+    private ImageView mBtnAlarm;
+
+    private FruitySharedPreferences checkReminder;
+    private MediaPlayer mMediaPlayer;
+    private boolean mCheckMedia = true;
+    private Long serverUptimeSeconds;
+
+    private ImageLoader mImgLoader;
+    private UpdateDatabaseListener mCallBack;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_match_not_played);
+        self = this;
+
+        checkReminder = new FruitySharedPreferences(self);
+
+        mImgLoader = new ImageLoader(self);
+
+
+        initControls();
+        initData();
+        showHideReminder();
+
+        try {
+            // Enable Up button.
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+            // Set title
+            getSupportActionBar().setTitle(R.string.app_name);
+        } catch (NullPointerException ex) {
+            ex.printStackTrace();
+        }
+
+        // Admob
+//        MainActivity.initBannerAdsOnActivity(self, R.id.ll_admob);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // Hide menus.
+        MenuItem item = menu.findItem(R.id.action_filter);
+        item.setVisible(false);
+
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        super.onCreateOptionsMenu(menu);
+
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_refresh) {
+            if (GlobalFunctions.checkMatchTime(matchObj) >= 0) {
+                startActivity(new Intent(self, MatchDetailActivity.class));
+                finish();
+            }
+        } else if (id == android.R.id.home) {
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("deprecation")
+    private void initControls() {
+        mBtnAlarm = (ImageView) findViewById(R.id.img_alarm);
+//        mLogoHome = (ImageView) findViewById(R.id.img_homeclub_timeline);
+//        mLogoAway = (ImageView) findViewById(R.id.img_awayclub_timeline);
+        mLblAway = (TextView) findViewById(R.id.lbl_name_team2);
+        mLblAway.setSelected(true);
+        mLblHome = (TextView) findViewById(R.id.lbl_name_team1);
+        mLblHome.setSelected(true);
+        mLblScores = (TextView) findViewById(R.id.lbl_scores_timeline);
+        mLblStatidum = (TextView) findViewById(R.id.lbl_stadium_timeline);
+        mLblStatidum.setSelected(true);
+        mLblReminder15 = (TextView) findViewById(R.id.lbl_reminder_15);
+        mLblReminder30 = (TextView) findViewById(R.id.lbl_reminder_30);
+        mLblReminder60 = (TextView) findViewById(R.id.lbl_reminder_60);
+        mLblReminderOntime = (TextView) findViewById(R.id.lbl_reminder_ontime);
+        mLblDate = (TextView) findViewById(R.id.lbl_date_timeline);
+        mLblTime = (TextView) findViewById(R.id.lbl_time_timeline);
+
+        mBtnAlarm.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                showDialogAlarm(matchObj.getmTime(), "");
+            }
+        });
+    }
+
+    private void initData() {
+        try {
+            // Get name and home's logo.
+            mLblHome.setText(matchObj.getmHomeName());
+//            mImgLoader.DisplayImage(matchObj.getmHomeImage(), mLogoHome);
+
+            // Get name and away's logo.
+            mLblAway.setText(matchObj.getmAwayName());
+//            mImgLoader.DisplayImage(matchObj.getmAwayImage(), mLogoAway);
+        } catch (NullPointerException ex) {
+            ex.printStackTrace();
+        }
+
+        // Get stadium
+        mLblStatidum.setText(matchObj.getmStadium());
+
+        // Get date and time.
+        mLblDate.setText(DateTimeUtility.convertTimeStampToDate(matchObj.getmTime(), "EEE, MM/dd"));
+        mLblTime.setText(DateTimeUtility.convertTimeStampToDate(matchObj.getmTime(), "HH:mm"));
+    }
+
+    private void showDialogAlarm(final String times, final String titleReminder) {
+        final Dialog dialog = new Dialog(self);
+        dialog.setTitle(DateTimeUtility.convertTimeStampToDate(matchObj.getmTime(), "HH:mm EEE, yyyy-MM-dd"));
+        dialog.setContentView(R.layout.dialog_settings_reminder);
+
+        final Vibrator vibrate = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrate.vibrate(GlobalValue.vibrateOnReminder * 1000);
+        mMediaPlayer = new MediaPlayer();
+
+        if (!mMediaPlayer.isPlaying()) {
+            try {
+                AssetFileDescriptor descriptor = getAssets()
+                        .openFd("alarm.mp3");
+                mMediaPlayer.setDataSource(descriptor.getFileDescriptor(),
+                        descriptor.getStartOffset(), descriptor.getLength());
+                descriptor.close();
+                mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+                mMediaPlayer.setLooping(true);
+                mMediaPlayer.prepare();
+                mMediaPlayer.setVolume(0, 0);
+                mMediaPlayer.start();
+                mCheckMedia = true;
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            } catch (IllegalStateException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // Init dialog's controls.
+        Button btnOk = (Button) dialog.findViewById(R.id.btn_reminder_ok);
+        final Button btnCancel = (Button) dialog
+                .findViewById(R.id.btn_reminder_cancel);
+        final CheckBox chkBefore15 = (CheckBox) dialog
+                .findViewById(R.id.chk_reminder_15);
+        final CheckBox chkBefore30 = (CheckBox) dialog
+                .findViewById(R.id.chk_reminder_30);
+        final CheckBox chkBefore60 = (CheckBox) dialog
+                .findViewById(R.id.chk_reminder_60);
+        final CheckBox chkOnTime = (CheckBox) dialog
+                .findViewById(R.id.chk_reminder_on_time);
+
+        // Display Cancel button.
+        if (checkReminder.getIntValue("check15" + matchObj.getmMatchId()) == Integer
+                .valueOf(matchObj.getmMatchId())) {
+            chkBefore15.setChecked(true);
+            btnCancel.setVisibility(View.VISIBLE);
+        }
+        if (checkReminder.getIntValue("check30" + matchObj.getmMatchId()) == Integer
+                .valueOf(matchObj.getmMatchId())) {
+            chkBefore30.setChecked(true);
+            btnCancel.setVisibility(View.VISIBLE);
+        }
+        if (checkReminder.getIntValue("check60" + matchObj.getmMatchId()) == Integer
+                .valueOf(matchObj.getmMatchId())) {
+            chkBefore60.setChecked(true);
+            btnCancel.setVisibility(View.VISIBLE);
+        }
+        if (checkReminder.getIntValue("checkOntime" + matchObj.getmMatchId()) == Integer
+                .valueOf(matchObj.getmMatchId())) {
+            chkOnTime.setChecked(true);
+            btnCancel.setVisibility(View.VISIBLE);
+        }
+
+        chkBefore15
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView,
+                                                 boolean isChecked) {
+
+                        checkAlarm(btnCancel, "check15", "15 is exist already",
+                                times, 15, vibrate,
+                                "The match will be started after 15 mins",
+                                chkBefore15, chkBefore30, chkBefore60,
+                                chkOnTime);
+                    }
+                });
+
+        chkBefore30
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView,
+                                                 boolean isChecked) {
+
+                        checkAlarm(btnCancel, "check30", "30 is exist already",
+                                times, 30, vibrate,
+                                "The match will be started after 30 mins",
+                                chkBefore30, chkBefore15, chkBefore60,
+                                chkOnTime);
+
+                    }
+                });
+
+        chkBefore60
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView,
+                                                 boolean isChecked) {
+
+                        checkAlarm(btnCancel, "check60", "60 is exist already",
+                                times, 60, vibrate,
+                                "The match will be started after 60 mins",
+                                chkBefore60, chkBefore30, chkBefore15,
+                                chkOnTime);
+                    }
+                });
+
+        chkOnTime
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView,
+                                                 boolean isChecked) {
+
+                        checkAlarm(btnCancel, "checkOntime",
+                                "On time is exist already", times, 0, vibrate,
+                                "The match is started", chkOnTime, chkBefore30,
+                                chkBefore60, chkBefore15);
+
+                    }
+                });
+
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+            @SuppressWarnings("deprecation")
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                if (mCheckMedia == true) {
+                    mMediaPlayer.stop();
+                    mMediaPlayer.release();
+                    mMediaPlayer = null;
+                    vibrate.cancel();
+                    System.runFinalizersOnExit(true);
+                    mCheckMedia = false;
+                }
+            }
+        });
+
+        btnOk.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                showHideReminder();
+                AlarmMatch item = new AlarmMatch();
+                item.setTime(matchObj.getmTime());
+                item.setMatchId(matchObj.getmMatchId());
+                item.setMatchTitle(matchObj.getmHomeName() + " - " + matchObj.getmAwayName());
+                item.setOnTime(chkOnTime.isChecked());
+                item.setBefore15Min(chkBefore15.isChecked());
+                item.setBefore30Min(chkBefore30.isChecked());
+                item.setBefore60Min(chkBefore60.isChecked());
+                if (chkOnTime.isChecked() || chkBefore15.isChecked() || chkBefore30.isChecked() || chkBefore60.isChecked()) {
+                    saveSettingToDatabase(item);
+                } else {
+                    // remove from database
+                    removeSettingFromDatabase(matchObj.getmMatchId());
+                }
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                cancelAllAlarm(matchObj);
+                dialog.dismiss();
+                showHideReminder();
+            }
+        });
+
+        dialog.show();
+    }
+
+    @SuppressWarnings("deprecation")
+    private void checkAlarm(final Button cancel, String strValue,
+                            String strExist, String matchTime, int typeReminder,
+                            Vibrator vibrate, String strStarted, final CheckBox chkChecked,
+                            final CheckBox chk1, final CheckBox chk2, final CheckBox chk3) {
+        if (chkChecked.isChecked()) {
+            if (checkReminder.getIntValue(strValue + matchObj.getmMatchId()) == Integer
+                    .valueOf(matchObj.getmMatchId())) {
+
+                Toast.makeText(self, strExist, Toast.LENGTH_LONG).show();
+            } else {
+                SimpleDateFormat formattera = new SimpleDateFormat(
+                        "yyyy-MM-dd HH:mm", Locale.getDefault());
+                Date oldDate;
+                try {
+                    oldDate = formattera.parse(DateTimeUtility.convertTimeStampToDate(matchTime, "yyyy-MM-dd HH:mm"));
+                    long time60 = oldDate.getTime()
+                            - (typeReminder * 60 * 1000);
+                    serverUptimeSeconds = ((time60 - System.currentTimeMillis()) / 1000);
+                    if (serverUptimeSeconds <= 0) {
+                        Toast.makeText(self,
+                                "Elapsed time, you can not reminder",
+                                Toast.LENGTH_LONG).show();
+                        chkChecked.setChecked(false);
+                        if (mCheckMedia == true) {
+                            mMediaPlayer.stop();
+                            mMediaPlayer.release();
+                            mMediaPlayer = null;
+                            vibrate.cancel();
+                            System.runFinalizersOnExit(true);
+                            mCheckMedia = false;
+                        }
+
+                    } else {
+                        // Show cancel button.
+                        cancel.setVisibility(View.VISIBLE);
+
+                        checkReminder.putIntValue(
+                                strValue + matchObj.getmMatchId(),
+                                Integer.valueOf(matchObj.getmMatchId()));
+                        // dialog.dismiss();
+                        long abc = oldDate.getTime()
+                                - (typeReminder * 60 * 1000);
+                        String timeReminder60Min = strStarted;
+                        setAlarm(abc, timeReminder60Min, matchObj.getmMatchId()
+                                + "", strValue);
+                        if (mCheckMedia == true) {
+                            mMediaPlayer.stop();
+                            mMediaPlayer.release();
+                            mMediaPlayer = null;
+                            vibrate.cancel();
+                            System.runFinalizersOnExit(true);
+                            mCheckMedia = false;
+                        }
+                    }
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                Log.e(TAG, serverUptimeSeconds + "");
+            }
+        } else {
+            if (checkReminder.getIntValue(strValue + matchObj.getmMatchId()) == Integer
+                    .valueOf(matchObj.getmMatchId())) {
+                checkReminder.putIntValue(strValue + matchObj.getmMatchId(), 0);
+            }
+
+            // Hide cancel button when have no any checkbox is checked.
+            if (!chk1.isChecked() && !chk2.isChecked() && !chk3.isChecked()) {
+                cancel.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    private void setAlarm(long abc, String title, String mathId, String type) {
+        PendingIntent pendingIntent;
+        Random r = new Random();
+        Intent intent = new Intent(self, AlarmMatchService.class);
+        Bundle b = new Bundle();
+        b.putString("titleReminder", title);
+        b.putString("matchId", mathId);
+        b.putString("type", type);
+        intent.putExtras(b);
+        pendingIntent = PendingIntent
+                .getBroadcast(self, r.nextInt(), intent, 0);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, abc, pendingIntent);
+    }
+
+    private void cancelAllAlarm(MatchObj match) {
+        if (checkReminder.getIntValue("check15" + match.getmMatchId()) == Integer
+                .valueOf(match.getmMatchId())) {
+            checkReminder.putIntValue("check15" + match.getmMatchId(), 0);
+        }
+        if (checkReminder.getIntValue("check30" + match.getmMatchId()) == Integer
+                .valueOf(match.getmMatchId())) {
+            checkReminder.putIntValue("check30" + match.getmMatchId(), 0);
+        }
+        if (checkReminder.getIntValue("check60" + match.getmMatchId()) == Integer
+                .valueOf(match.getmMatchId())) {
+            checkReminder.putIntValue("check60" + match.getmMatchId(), 0);
+        }
+        if (checkReminder.getIntValue("checkOntime" + match.getmMatchId()) == Integer
+                .valueOf(match.getmMatchId())) {
+            checkReminder.putIntValue("checkOntime" + match.getmMatchId(), 0);
+        }
+    }
+
+    private void showHideReminder() {
+        if (checkReminder.getIntValue("check15" + matchObj.getmMatchId()) == Integer
+                .valueOf(matchObj.getmMatchId())) {
+            mLblReminder15.setVisibility(View.VISIBLE);
+        } else {
+            mLblReminder15.setVisibility(View.GONE);
+        }
+        if (checkReminder.getIntValue("check30" + matchObj.getmMatchId()) == Integer
+                .valueOf(matchObj.getmMatchId())) {
+            mLblReminder30.setVisibility(View.VISIBLE);
+        } else {
+            mLblReminder30.setVisibility(View.GONE);
+        }
+        if (checkReminder.getIntValue("check60" + matchObj.getmMatchId()) == Integer
+                .valueOf(matchObj.getmMatchId())) {
+            mLblReminder60.setVisibility(View.VISIBLE);
+        } else {
+            mLblReminder60.setVisibility(View.GONE);
+        }
+        if (checkReminder.getIntValue("checkOntime" + matchObj.getmMatchId()) == Integer
+                .valueOf(matchObj.getmMatchId())) {
+            mLblReminderOntime.setVisibility(View.VISIBLE);
+        } else {
+            mLblReminderOntime.setVisibility(View.GONE);
+        }
+    }
+
+    private void saveSettingToDatabase(AlarmMatch alarmMatch) {
+        DatabaseUtility databaseUtility = new DatabaseUtility();
+        databaseUtility.insertAlarmMatch(alarmMatch, MatchDetailNotPlayedActivity.this);
+        mCallBack.changeDatabaseListener();
+
+
+    }
+
+    private void removeSettingFromDatabase(String matchId) {
+        DatabaseUtility databaseUtility = new DatabaseUtility();
+        databaseUtility.deleteAlarmMatch(matchId, MatchDetailNotPlayedActivity.this);
+        mCallBack.changeDatabaseListener();
+    }
+
+    public void setUpdateDatabaseListener(UpdateDatabaseListener updateDatabaseListener) {
+        this.mCallBack = updateDatabaseListener;
+    }
+}

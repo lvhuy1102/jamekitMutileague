@@ -1,0 +1,213 @@
+package com.hcpt.multileagues.fragments;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.hcpt.multileagues.R;
+import com.hcpt.multileagues.activities.MatchDetailActivity;
+import com.hcpt.multileagues.adapters.LineUpFirstTeamAdapter;
+import com.hcpt.multileagues.configs.Constants;
+import com.hcpt.multileagues.configs.WebservicesConfigs;
+import com.hcpt.multileagues.database.DatabaseUtility;
+import com.hcpt.multileagues.json.utils.ParserUtils;
+import com.hcpt.multileagues.modelmanager.ModelManager;
+import com.hcpt.multileagues.modelmanager.ModelManagerListener;
+import com.hcpt.multileagues.network.NetworkUtility;
+import com.hcpt.multileagues.objects.APIObj;
+import com.hcpt.multileagues.objects.LineUpObj;
+import com.hcpt.multileagues.objects.MatchObj;
+
+import java.util.ArrayList;
+
+public class LineupsFragment extends Fragment {
+
+    private View view;
+    private MatchObj mMatchObj;
+    private static ArrayList<LineUpObj> mArrLineup;
+    private LineUpFirstTeamAdapter mFirstTeamAdapter;
+    private ListView mLvFirstTeam;
+
+    private TextView mLblHomeName, mLblAwayName, mLblNoData;
+
+    private BroadcastReceiver broadcastReceiver;
+    private IntentFilter filter;
+    // public static LineupsFragment lineUpFr;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mMatchObj = MatchDetailActivity.currentMatch;
+        // Allow display option menu in this fragment.
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+
+        view = inflater.inflate(R.layout.fragment_lineups, container, false);
+
+        initControls();
+        initData();
+        mListener();
+        return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        menu.clear();
+        inflater.inflate(R.menu.menu_main, menu);
+        menu.findItem(R.id.action_save).setVisible(false);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_refresh) {
+            initData();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void initControls() {
+        mLvFirstTeam = (ListView) view.findViewById(R.id.lv_firstteam);
+        mLblHomeName = (TextView) view.findViewById(R.id.lbl_lineup_homename);
+        mLblAwayName = (TextView) view.findViewById(R.id.lbl_lineup_awayname);
+        mLblNoData = (TextView) view.findViewById(R.id.lbl_lineup_no);
+
+        mLblAwayName.setSelected(true);
+        mLblHomeName.setSelected(true);
+
+        // Set club's name.
+        mLblHomeName.setText(mMatchObj.getmHomeName());
+        mLblAwayName.setText(mMatchObj.getmAwayName());
+    }
+
+    private void initData() {
+        if (NetworkUtility.getInstance(getActivity()).isNetworkAvailable()) {
+            getLineUpsFromAPI();
+        } else {
+            getLineUpsFromDB();
+        }
+    }
+
+    private void mListener() {
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if (intent.getAction().equals(Constants.REFRESH_DATA)) {
+                    getLineUpsFromAPI();
+                }
+            }
+        };
+        filter = new IntentFilter();
+        filter.addAction(Constants.REFRESH_DATA);
+        getActivity().registerReceiver(broadcastReceiver, filter);
+    }
+
+    private void getLineUpsFromDB() {
+        final ArrayList<LineUpObj> arrHome = new ArrayList<LineUpObj>();
+        final ArrayList<LineUpObj> arrAway = new ArrayList<LineUpObj>();
+        APIObj apiInfos = DatabaseUtility.getResuftFromApi(
+                getActivity(),
+                WebservicesConfigs.URL_GET_LINEUPS_BY_MATCH
+                        + mMatchObj.getmMatchId());
+        if (apiInfos != null) {
+            String json = apiInfos.getmResult();
+
+            mArrLineup = ParserUtils.parserLineUps(json);
+
+            // Bind data for listview.
+            // Get home and away lineups.
+            for (int i = 0; i < mArrLineup.size(); i++) {
+                if (mArrLineup.get(i).getmClubId().equals(mMatchObj.getmHome())) {
+                    arrHome.add(mArrLineup.get(i));
+                } else if (mArrLineup.get(i).getmClubId()
+                        .equals(mMatchObj.getmAway())) {
+                    arrAway.add(mArrLineup.get(i));
+                }
+            }
+
+            // Set adapter for first team.
+            mFirstTeamAdapter = new LineUpFirstTeamAdapter(getActivity(),
+                    arrHome, arrAway);
+            mLvFirstTeam.setAdapter(mFirstTeamAdapter);
+        }
+
+        // Show/hide textview
+        if (mArrLineup.size() > 0) {
+            mLblNoData.setVisibility(View.GONE);
+        } else {
+            mLblNoData.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void getLineUpsFromAPI() {
+        final ArrayList<LineUpObj> arrHome = new ArrayList<LineUpObj>();
+        final ArrayList<LineUpObj> arrAway = new ArrayList<LineUpObj>();
+        ModelManager.getLineUpsByMatch(getActivity(), mMatchObj.getmMatchId(),
+                true, new ModelManagerListener() {
+
+                    @Override
+                    public void onSuccess(Object object) {
+                        String json = (String) object;
+
+                        mArrLineup = ParserUtils.parserLineUps(json);
+
+                        // Get home and away lineups.
+                        for (int i = 0; i < mArrLineup.size(); i++) {
+                            if (mArrLineup.get(i).getmClubId()
+                                    .equals(mMatchObj.getmHome())) {
+                                arrHome.add(mArrLineup.get(i));
+                            } else if (mArrLineup.get(i).getmClubId()
+                                    .equals(mMatchObj.getmAway())) {
+                                arrAway.add(mArrLineup.get(i));
+                            }
+                        }
+
+                        // Set adapter for first team.
+                        mFirstTeamAdapter = new LineUpFirstTeamAdapter(
+                                getActivity(), arrHome, arrAway);
+                        mLvFirstTeam.setAdapter(mFirstTeamAdapter);
+
+                        // Show/hide textview
+                        if (mArrLineup.size() > 0) {
+                            mLblNoData.setVisibility(View.GONE);
+                        } else {
+                            mLblNoData.setVisibility(View.VISIBLE);
+                        }
+                    }
+
+                    @Override
+                    public void onError() {
+                        // TODO Auto-generated method stub
+
+                    }
+                });
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        getActivity().unregisterReceiver(broadcastReceiver);
+    }
+}

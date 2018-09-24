@@ -1,0 +1,320 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/span200"
+                android:scaleType="fitXY"
+                android:src="@mipmap/field" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/bt_back"
+                    android:layout_width="@dimen/_30dp"
+                    android:layout_height="@dimen/_30dp"
+                    android:layout_marginLeft="@dimen/span16"
+                    android:layout_marginTop="@dimen/span16"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_back" />
+
+                <ImageButton
+                    android:id="@+id/btnRefreshMatchDetail"
+                    android:layout_width="@dimen/_30dp"
+                    android:layout_height="@dimen/_30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/span16"
+                    android:layout_marginTop="@dimen/span16"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_refresh_white_24dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+                    android:id="@+id/txtDayMatchDetail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/span20"
+                    android:gravity="center_horizontal"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_color_holo_dark"
+                    android:textSize="@dimen/font_size_body" />
+
+                <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+                    android:id="@+id/txtStatusMatchDetail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/text_color_holo_dark"
+                    android:textSize="@dimen/font_size_body" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/span72"
+                    android:layout_marginTop="@dimen/span12">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent">
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/iv_status"
+                                android:layout_width="@dimen/span66"
+                                android:layout_height="@dimen/span66"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/bg_gray_circle" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_date"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="14 Jun"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_time_detail_item_macth" />
+
+                                <TextView
+                                    android:id="@+id/tv_minute"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Finish"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_time_detail_item_macth" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="@dimen/span16"
+                        android:layout_marginRight="@dimen/span16">
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="@dimen/span24"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txtScoreTeam1MatchDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text="5"
+                                android:textColor="@color/white"
+                                android:textSize="46sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="@dimen/span24"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txtScoreTeam2MatchDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text="5"
+                                android:textColor="@color/white"
+                                android:textSize="46sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/span16"
+                    android:layout_marginRight="@dimen/span16">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/span10">
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/span24"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_width="@dimen/span64"
+                                android:layout_height="@dimen/span32"
+                                android:layout_centerHorizontal="true"
+                                android:background="@null"
+                                android:src="@mipmap/shadow_flag" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/span24"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_width="@dimen/span64"
+                                android:layout_height="@dimen/span32"
+                                android:layout_centerHorizontal="true"
+                                android:background="@null"
+                                android:src="@mipmap/shadow_flag" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/span4"
+                            android:orientation="horizontal">
+
+                            <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+                                android:id="@+id/txtTeam1MatchDetail"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/span24"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:textAllCaps="true"
+                                android:textColor="@color/text_color_holo_dark"
+                                android:textSize="@dimen/font_size_14" />
+
+                            <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+                                android:id="@+id/txtTeam2MatchDetail"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/span24"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:textAllCaps="true"
+                                android:textColor="@color/text_color_holo_dark"
+                                android:textSize="@dimen/font_size_14" />
+                        </LinearLayout>
+
+                        <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+                            android:id="@+id/txtStadiumMatchDetail"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/text_color_holo_dark"
+                            android:textSize="@dimen/font_size_caption" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--<com.hcpt.multileagues.pagerslidingstabstrip.PagerSlidingTabStrip-->
+                <!--android:id="@+id/tabs"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/height_tabs"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:background="@color/background_tab"-->
+                <!--app:pstsIndicatorColor="@color/tab_indicator_color"-->
+                <!--app:pstsIndicatorHeight="4dp"-->
+                <!--app:pstsUnderlineColor="@color/tab_indicator_color"-->
+                <!--app:pstsUnderlineHeight="1dp"-->
+                <!--app:tabSelectedTextColor="@color/tab_indicator_color"-->
+                <!--app:tabTextColor="#acb3cd" />-->
+
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                style="@style/MineCustomTabText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_tabs"
+                android:background="@color/background_tab"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:tabIndicatorColor="@color/tab_indicator_color"
+                app:tabIndicatorHeight="4dp"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="#acb3cd" />
+
+            <TextView
+                android:id="@+id/border_bottom_tab"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tabs"
+                android:background="@color/tab_indicator_color"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/ll_admob"
+                android:layout_below="@+id/border_bottom_tab"
+                android:background="@color/background_main" />
+
+            <LinearLayout
+                android:id="@+id/ll_admob"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_admob"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="@color/black"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,390 @@
+[
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bell.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_bell.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_match_status.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\bg_match_status.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_close_matches.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_close_matches.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\actionbar_new.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\actionbar_new.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_disabled.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_focused.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\item.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\item.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_512.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_512.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_in_teamb.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_in_teamb.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_tabs.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\bg_tabs.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\timeline_middle.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\timeline_middle.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\timeline_start.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\timeline_start.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_disabled.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\17bee4d6dac55f681b3b56978cd3196a99b2fbee\\output\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seekbar_style.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\seekbar_style.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seekbar_progress.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\seekbar_progress.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_focused.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_gray_circle.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\bg_gray_circle.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\17bee4d6dac55f681b3b56978cd3196a99b2fbee\\output\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\splash.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\splash.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_green_circle.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_green_circle.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\17bee4d6dac55f681b3b56978cd3196a99b2fbee\\output\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_image_menu.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\bg_image_menu.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_out_teamb.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_out_teamb.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_item_seduche.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\bg_item_seduche.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_radius_blue_light.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\bg_radius_blue_light.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tooltip_frame_light.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\tooltip_frame_light.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_white.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_menu_white.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_focused.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_softnew.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_softnew.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_green_circle.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\bg_green_circle.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_softnewmtl.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_softnewmtl.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_thumb.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\custom_thumb.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\17bee4d6dac55f681b3b56978cd3196a99b2fbee\\output\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\border_shadow.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\border_shadow.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tooltip_frame_dark.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\tooltip_frame_dark.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_change_name.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\background_change_name.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_main.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\bg_main.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_out_teama.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_out_teama.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\timeline_end.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\timeline_end.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\drawable\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_gray.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_gray.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\checkbox_selector.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\checkbox_selector.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_gray_circle.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_gray_circle.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_button_settings.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\bg_button_settings.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\flag_noname.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\flag_noname.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_normal.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_focused.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_drop_up.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_drop_up.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\navigation_empty_icon.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\drawable\\navigation_empty_icon.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_red_bell.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_red_bell.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_normal.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_password_eye.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\0b3b887fd16cbc2dcb37873f1a654659f646bec7\\output\\res\\drawable\\design_password_eye.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_normal.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_tab.xml",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\background_tab.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark_normal.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\a0afafb87668711ba16f0482a5a4a6e9240f679e\\output\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_in_teama.png",
+        "source": "E:\\CP software\\jameKit Multipe League\\app\\src\\main\\res\\drawable\\ic_in_teama.png"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "E:\\CP software\\jameKit Multipe League\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\LeQuan\\.android\\build-cache\\2c1181a617cbe91da67969bcc479c9de3602b31c\\output\\res\\drawable\\abc_textfield_search_material.xml"
+    }
+]

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fr_settings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/padding_horizontal"
+        android:paddingRight="@dimen/padding_horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/chk_auto_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_admob"
+            android:button="@drawable/checkbox_selector"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_normal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:text="@string/text_auto_refresh"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_normal" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layou_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1 min" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 mins" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/skbar_minute_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="30"
+            android:layout_marginLeft="25dp"
+            android:maxHeight="4dp"
+            android:progressDrawable="@drawable/seekbar_style"
+            android:thumb="@drawable/custom_thumb"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/padding_xsmall"
+            android:layout_marginRight="@dimen/padding_xsmall"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@color/line_divider"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/chk_getNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_admob"
+                android:button="@drawable/checkbox_selector"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="@string/notification_on_off"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lbl_fav_teams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_horizontal_large"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_marginLeft="@dimen/text_size_normal"
+                android:id="@+id/image"
+                android:scaleType="fitCenter"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_drop_down" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/text_turn_on_fav_teams"
+                android:textColor="@color/textColorSecondary"
+                android:textSize="@dimen/text_size_small"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_horizontal_large">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/margin_horizontal"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/layout_notification"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_status"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/text_all" />
+
+                        <CheckBox
+                            android:id="@+id/chk_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_small"
+                            android:button="@drawable/checkbox_selector"
+                            android:textSize="@dimen/text_size_normal" />
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rcl_team"
+                        android:nestedScrollingEnabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/padding_xsmall"
+            android:layout_marginRight="@dimen/padding_xsmall"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@color/line_divider"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btn_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_settings"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="@dimen/padding_horizontal_large"
+            android:paddingRight="@dimen/padding_horizontal_large"
+            android:text="@string/text_btn_language"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_normal"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@color/blue"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_more_apps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_xsmall"
+            android:layout_marginRight="@dimen/padding_xsmall"
+            android:background="@drawable/bg_button_settings"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="@dimen/padding_horizontal_large"
+            android:paddingRight="@dimen/padding_horizontal_large"
+            android:text="@string/text_btn_more_apps"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_normal" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/padding_xsmall"
+            android:layout_marginRight="@dimen/padding_xsmall"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@color/line_divider"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_about_us"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_xsmall"
+            android:layout_marginRight="@dimen/padding_xsmall"
+            android:background="@drawable/bg_button_settings"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="@dimen/padding_horizontal_large"
+            android:paddingRight="@dimen/padding_horizontal_large"
+            android:text="@string/text_btn_about"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_normal"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

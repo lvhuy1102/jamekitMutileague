@@ -1,0 +1,157 @@
+package com.hcpt.multileagues.volley;
+
+import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.support.multidex.MultiDex;
+import android.text.TextUtils;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+import com.facebook.stetho.Stetho;
+import com.firebase.client.Firebase;
+import com.google.analytics.tracking.android.GAServiceManager;
+import com.google.analytics.tracking.android.GoogleAnalytics;
+import com.google.analytics.tracking.android.Logger;
+import com.google.analytics.tracking.android.Tracker;
+import com.hcpt.multileagues.configs.FruitySharedPreferences;
+
+import java.util.Objects;
+
+/**
+ * Created by pham on 20/10/2015.
+ */
+public class ControllerRequest extends Application {
+    private RequestQueue requestQueue;
+    public static final String TAG = ControllerRequest.class.getSimpleName();
+    private static ControllerRequest controller;
+
+    // GA
+    private static GoogleAnalytics mGa;
+    private static Tracker mTracker;
+    private static final int GA_DISPATCH_PERIOD = 30;
+
+    // Prevent hits from being sent to reports, i.e. during testing.
+    private static final boolean GA_IS_DRY_RUN = false;
+
+    private static final Logger.LogLevel GA_LOG_VERBOSITY = Logger.LogLevel.INFO;
+
+    private static final String TRACKING_PREF_KEY = "trackingPreference";
+
+    private static final String GOOGLE_ANALYTIC_KEY = "UA-52413174-6";
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        controller = this;
+        initializeGa();
+        Firebase.setAndroidContext(this);
+        Stetho.initializeWithDefaults(this);
+    }
+
+    /**
+     * @return
+     */
+
+    public static ControllerRequest getInstance() {
+        return controller;
+    }
+
+    /**
+     * @return trả về một đối tượng của RequestQueue sử dụng để gửi request
+     */
+    private RequestQueue getRequestQueue() {
+        if (requestQueue == null) {
+            requestQueue = Volley.newRequestQueue(getApplicationContext());
+        }
+        return requestQueue;
+    }
+
+    /**
+     * @param request một request bất kì
+     * @param tag     được sử dụng setTag cho request
+     * @param <T>     tham số extends từ Object
+     */
+    public <T> void addToRequestQueue(Request<T> request, String tag) {
+        request.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
+        getRequestQueue().add(request);
+    }
+
+    /**
+     * @param request
+     * @param <T>     tham số extends từ Object
+     */
+    public <T> void addToRequestQueue(Request<T> request) {
+        request.setTag(TAG);
+        getRequestQueue().add(request);
+
+    }
+
+    /**
+     * @param tag
+     */
+    public void cancelRequest(Objects tag) {
+        if (requestQueue != null) {
+            requestQueue.cancelAll(tag);
+        }
+    }
+
+    /* Start GA */
+
+    private void initializeGa() {
+
+        mGa = GoogleAnalytics.getInstance(this);
+        mTracker = mGa.getTracker(GOOGLE_ANALYTIC_KEY);
+        // Set dispatch period.
+        GAServiceManager.getInstance().setLocalDispatchPeriod(
+                GA_DISPATCH_PERIOD);
+
+        // Set dryRun flag.
+        mGa.setDryRun(GA_IS_DRY_RUN);
+
+        // Set Logger verbosity.
+        mGa.getLogger().setLogLevel(GA_LOG_VERBOSITY);
+
+        // Set the opt out flag when user updates a tracking preference.
+        SharedPreferences userPrefs = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        userPrefs
+                .registerOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
+                    @Override
+                    public void onSharedPreferenceChanged(
+                            SharedPreferences sharedPreferences, String key) {
+                        if (key.equals(TRACKING_PREF_KEY)) {
+                            GoogleAnalytics
+                                    .getInstance(getApplicationContext())
+                                    .setAppOptOut(
+                                            sharedPreferences.getBoolean(key,
+                                                    false));
+                        }
+                    }
+                });
+    }
+
+    /*
+     * Returns the Google Analytics tracker.
+     */
+    public static Tracker getGaTracker() {
+        return mTracker;
+    }
+
+    /*
+     * Returns the Google Analytics instance.
+     */
+    public static GoogleAnalytics getGaInstance() {
+        return mGa;
+    }
+
+    /* End of GA */
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
+}

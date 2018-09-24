@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@null"
+    android:layout_height="wrap_content">
+
+<android.support.v7.widget.CardView
+    android:id="@+id/cv_item_match"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_item"
+    android:layout_marginBottom="@dimen/margin_item"
+    android:layout_marginLeft="@dimen/margin_layout"
+    android:layout_marginRight="@dimen/margin_layout"
+    app:cardBackgroundColor="@color/white"
+    app:cardPreventCornerOverlap="false"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="@dimen/margin_small">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="@dimen/_180dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:background="@drawable/item"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+                android:id="@+id/lbl_date_match"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="19 - Jun"
+                android:textSize="@dimen/text_size_lblHeader_match"
+                android:textColor="@color/textColorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_nofitication"
+                app:layout_constraintLeft_toLeftOf="@+id/img_infor"
+                app:layout_constraintRight_toLeftOf="@+id/tv_nofitication"
+                app:layout_constraintTop_toTopOf="@+id/tv_nofitication" />
+
+            <LinearLayout
+                android:id="@+id/ll_iv_notification"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_notification"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/ic_gray_circle"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_infor"
+                    app:layout_constraintLeft_toLeftOf="@+id/img_infor"
+                    app:layout_constraintRight_toRightOf="@+id/img_infor"
+                    app:layout_constraintTop_toTopOf="@+id/img_infor" />
+            </LinearLayout>
+
+            <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+                android:id="@+id/lbl_time_match"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Finish"
+                android:textAllCaps="true"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_lblHeader_match"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_nofitication"
+                app:layout_constraintLeft_toRightOf="@+id/tv_nofitication"
+                app:layout_constraintRight_toRightOf="@+id/img_infor"
+                app:layout_constraintTop_toTopOf="@+id/tv_nofitication" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_item_match"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+                android:id="@+id/lbl_name_team1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_horizontal_large"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:text="Asenal"
+                android:layout_marginTop="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_team_match" />
+
+
+            <com.hcpt.multileagues.widget.textview.TextViewRobotoBold
+                android:id="@+id/lbl_home_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="2"
+                android:textColor="@color/bright_blue"
+                android:textSize="@dimen/text_size_score_item"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_two_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" : "
+                android:layout_marginTop="-3dp"
+                android:textColor="@color/bright_blue"
+                android:textSize="@dimen/text_size_score_item"
+                android:textStyle="bold" />
+
+            <com.hcpt.multileagues.widget.textview.TextViewRobotoBold
+                android:id="@+id/lbl_away_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="3"
+                android:textColor="@color/bright_blue"
+                android:textSize="@dimen/text_size_score_item"
+                android:textStyle="bold" />
+
+            <com.hcpt.multileagues.widget.textview.TextViewRobotoRegular
+                android:id="@+id/lbl_name_team2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_horizontal_large"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="Chelsea"
+                android:layout_marginTop="2dp"
+                android:textAllCaps="false"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_team_match" />
+
+            <TextView
+                android:id="@+id/lbl_vs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:gravity="center_horizontal"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="Saopaolo"
+                android:textColor="@color/textColorSecondary"
+                android:textSize="@dimen/text_size_small"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fr_timeline"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_horizontal"
+        android:layout_marginRight="@dimen/margin_horizontal"
+        android:layout_marginTop="@dimen/margin_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lbl_date_timeline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/text_size_normal" />
+
+        <TextView
+            android:id="@+id/lbl_time_timeline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="center_horizontal"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/margin_horizontal"
+        android:layout_marginRight="@dimen/margin_horizontal"
+        android:background="@color/line_divider" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_home_club"
+            android:layout_width="@dimen/width_logo_section"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/margin_horizontal_large"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!--<ImageView-->
+            <!--android:id="@+id/img_homeclub_timeline"-->
+            <!--android:layout_width="@dimen/ic_normal_logo"-->
+            <!--android:layout_height="@dimen/ic_normal_logo"-->
+            <!--android:contentDescription="@string/text_team" />-->
+
+            <TextView
+                android:id="@+id/lbl_name_team1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/width_league_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lbl_scores_timeline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_score" />
+
+            <TextView
+                android:id="@+id/lbl_stadium_timeline"
+                android:layout_width="@dimen/width_logo_section"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lbl_scores_timeline"
+                android:layout_centerHorizontal="true"
+                android:ellipsize="marquee"
+                android:gravity="center_horizontal"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingLeft="@dimen/padding_small"
+                android:paddingRight="@dimen/padding_small"
+                android:singleLine="true"
+                android:textColor="@color/textColorSecondary"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_away_club"
+            android:layout_width="@dimen/width_logo_section"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/margin_horizontal_large"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!--<ImageView-->
+            <!--android:id="@+id/img_awayclub_timeline"-->
+            <!--android:layout_width="@dimen/ic_normal_logo"-->
+            <!--android:layout_height="@dimen/ic_normal_logo"-->
+            <!--android:contentDescription="@string/text_team" />-->
+
+            <TextView
+                android:id="@+id/lbl_name_team2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/margin_horizontal"
+        android:layout_marginRight="@dimen/margin_horizontal"
+        android:background="@color/line_divider" />
+
+    <ListView
+        android:id="@+id/lv_events"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/lbl_events_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_vertical_xlarge"
+        android:text="@string/text_no_events"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone" />
+
+</LinearLayout>

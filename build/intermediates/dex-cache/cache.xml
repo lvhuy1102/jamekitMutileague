@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="E:\CP software\jameKit Multipe League\app\libs\chartboost.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="de51dabe7039f344f8b72b2e9c3b52ceb83f5b3f">
+        <dex dex="E:\CP software\jameKit Multipe League\app\build\intermediates\transforms\dex\debug\folders\1000\2\chartboost_71a7419a91b5751f088a9447ee596be86d6fbd8a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\CP software\jameKit Multipe League\app\libs\jsoup-1.7.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="872693211fd68d1c4e116cf90021603207725e19">
+        <dex dex="E:\CP software\jameKit Multipe League\app\build\intermediates\transforms\dex\debug\folders\1000\2\jsoup-1.7.2_280cca7f6a11c045b90658e05b97af20e2cdc80f\classes.dex" />
+    </item>
+
+</items>

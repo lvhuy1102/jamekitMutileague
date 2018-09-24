@@ -1,0 +1,174 @@
+package com.hcpt.multileagues.utilities;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
+public class DateTimeUtility {
+
+    public static String convertTimeStampToDate(String timeStamp,
+                                                String outputFormat) {
+        if (timeStamp == null || timeStamp.equals("")) {
+            timeStamp = "0";
+        }
+        SimpleDateFormat formater = new SimpleDateFormat(outputFormat,
+                Locale.getDefault());
+        Date date = new Date(Long.parseLong(timeStamp) * 1000);
+        return formater.format(date);
+    }
+
+    public static long getDateDiff(Date curDate, Date specDate,
+                                   TimeUnit timeUnit) {
+        long diff = curDate.getTime() - specDate.getTime();
+        return timeUnit.convert(diff, TimeUnit.MILLISECONDS);
+    }
+
+    public static String formatDate(Date date, String outputFormat) {
+        SimpleDateFormat formater = new SimpleDateFormat(outputFormat,
+                Locale.getDefault());
+        return formater.format(date);
+    }
+
+    public static String convertTimeStampToStartOfDate(String timeStamp) {
+        String result = "";
+
+        String strDate = DateTimeUtility.convertTimeStampToDate(
+                timeStamp.substring(0, timeStamp.length() - 3), "MM/dd/yyyy")
+                + " 12:00:00";
+        Date date = new Date(strDate);
+
+        result = (date.getTime() + "").substring(0,
+                (date.getTime() + "").length() - 3);
+
+        return result;
+    }
+
+    public static String convertTimeStampToDate(String timeStamp) {
+        String result = "";
+
+        String strDate = DateTimeUtility.convertTimeStampToDate(
+                timeStamp.substring(0, timeStamp.length() - 3), "MM/dd/yyyy")
+                + " 00:00:00";
+        Date date = new Date(strDate);
+
+        result = (date.getTime() + "").substring(0,
+                (date.getTime() + "").length() - 3);
+
+        return result;
+    }
+
+    public static String convertTimeStampToHours(String timeStamp) {
+        return new SimpleDateFormat("MMM dd HH:mm", Locale.getDefault()).format(new Date(Long.parseLong(timeStamp) * 1000L));
+    }
+
+
+    public static String convertTimeStampToString(String s) {
+        String s1;
+        if (getDayOfMonth(s) < 10) {
+            s1 = (new StringBuilder()).append("0").append(getDayOfMonth(s)).toString();
+        } else {
+            s1 = String.valueOf(getDayOfMonth(s));
+        }
+        return (new StringBuilder()).append(convertTimeStampToMonth(s)).append(" ").append(s1).append("-").append(getYear(s)).toString();
+    }
+
+    private static int getDayOfMonth(String s) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(Long.parseLong(s) * 1000L);
+        return calendar.get(Calendar.DAY_OF_MONTH);
+    }
+
+    private static String convertTimeStampToMonth(String s) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(Long.parseLong(s) * 1000L);
+        switch (calendar.get(Calendar.MONTH)) {
+            default:
+                return null;
+
+            case 0: // '\0'
+                return "JAN";
+
+            case 1: // '\001'
+                return "FEB";
+
+            case 2: // '\002'
+                return "MAR";
+
+            case 3: // '\003'
+                return "APR";
+
+            case 4: // '\004'
+                return "MAY";
+
+            case 5: // '\005'
+                return "JUN";
+
+            case 6: // '\006'
+                return "JUL";
+
+            case 7: // '\007'
+                return "AUG";
+
+            case 8: // '\b'
+                return "SEP";
+
+            case 9: // '\t'
+                return "OCT";
+
+            case 10: // '\n'
+                return "NOV";
+
+            case 11: // '\013'
+                return "DEC";
+        }
+    }
+
+    private static int getYear(String s) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(Long.parseLong(s) * 1000L);
+        return calendar.get(Calendar.YEAR);
+    }
+
+
+    public static boolean isToday(String timeStamp) {
+        boolean result = false;
+        Calendar calendar = Calendar.getInstance();
+        Date todayStart = new Date();
+        Date todayEnd = new Date();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        calendar.set(year, month, day, 0, 0, 0);
+
+        todayStart = calendar.getTime();
+        calendar.set(year, month, day, 23, 59, 59);
+        todayEnd = calendar.getTime();
+
+        Long start = todayStart.getTime();
+        Long end = todayEnd.getTime();
+        if ((start < (Long.parseLong(timeStamp) * 1000L)) && (end > (Long.parseLong(timeStamp) * 1000L))) {
+            result = true;
+        }
+
+        return result;
+    }
+
+    public static boolean isNextWeek(String timeStamp) {
+        boolean result = false;
+        Calendar calendar = Calendar.getInstance();
+        Date today = new Date();
+
+        today = calendar.getTime();
+
+        Long start = today.getTime();
+        Long end = start + (7 * 86400 * 1000L);
+        if ((start < (Long.parseLong(timeStamp) * 1000L)) && (end > (Long.parseLong(timeStamp) * 1000L))) {
+            result = true;
+        }
+
+        return result;
+    }
+
+}

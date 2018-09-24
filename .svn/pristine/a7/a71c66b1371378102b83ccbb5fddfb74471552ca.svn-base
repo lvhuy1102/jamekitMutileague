@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.android.gms:play-services-tagmanager-api-10.0.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/c9024a3f411c60d4a08dbb316168a4fd72b065ac/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/c9024a3f411c60d4a08dbb316168a4fd72b065ac/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
